@@ -33,12 +33,15 @@ gem 'capistrano-ext'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Test suite
-gem 'rspec-rails', :groups => [:development, :test]
+gem 'cucumber-rails', :groups => [:development, :test]
+gem 'rspec-rails',    :groups => [:development, :test]
 group :test do
-  gem 'capybara'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'guard-cucumber'
   gem 'guard-pow'
   gem 'guard-rspec'
+  gem 'webrat'
 end
 
 group :production do
