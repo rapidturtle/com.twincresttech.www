@@ -29,7 +29,7 @@ describe ManufacturersController do
 
   describe "GET index" do
     it "assigns all manufacturers as @manufacturers" do
-      manufacturer = Manufacturer.create! valid_attributes
+      manufacturer = Factory(:manufacturer)
       get :index
       assigns(:manufacturers).should eq([manufacturer])
     end
@@ -37,7 +37,7 @@ describe ManufacturersController do
 
   describe "GET show" do
     it "assigns the requested manufacturer as @manufacturer" do
-      manufacturer = Manufacturer.create! valid_attributes
+      manufacturer = Factory(:manufacturer)
       get :show, :id => manufacturer.id
       assigns(:manufacturer).should eq(manufacturer)
     end
@@ -52,7 +52,7 @@ describe ManufacturersController do
 
   describe "GET edit" do
     it "assigns the requested manufacturer as @manufacturer" do
-      manufacturer = Manufacturer.create! valid_attributes
+      manufacturer = Factory(:manufacturer)
       get :edit, :id => manufacturer.id
       assigns(:manufacturer).should eq(manufacturer)
     end
@@ -62,18 +62,18 @@ describe ManufacturersController do
     describe "with valid params" do
       it "creates a new Manufacturer" do
         expect {
-          post :create, :manufacturer => valid_attributes
+          post :create, :manufacturer => Factory.attributes_for(:manufacturer)
         }.to change(Manufacturer, :count).by(1)
       end
 
       it "assigns a newly created manufacturer as @manufacturer" do
-        post :create, :manufacturer => valid_attributes
+        post :create, :manufacturer => Factory.attributes_for(:manufacturer)
         assigns(:manufacturer).should be_a(Manufacturer)
         assigns(:manufacturer).should be_persisted
       end
 
       it "redirects to the created manufacturer" do
-        post :create, :manufacturer => valid_attributes
+        post :create, :manufacturer => Factory.attributes_for(:manufacturer)
         response.should redirect_to(Manufacturer.last)
       end
     end
@@ -98,7 +98,7 @@ describe ManufacturersController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested manufacturer" do
-        manufacturer = Manufacturer.create! valid_attributes
+        manufacturer = Factory(:manufacturer)
         # Assuming there are no other manufacturers in the database, this
         # specifies that the Manufacturer created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -108,13 +108,13 @@ describe ManufacturersController do
       end
 
       it "assigns the requested manufacturer as @manufacturer" do
-        manufacturer = Manufacturer.create! valid_attributes
+        manufacturer = Factory(:manufacturer)
         put :update, :id => manufacturer.id, :manufacturer => valid_attributes
         assigns(:manufacturer).should eq(manufacturer)
       end
 
       it "redirects to the manufacturer" do
-        manufacturer = Manufacturer.create! valid_attributes
+        manufacturer = Factory(:manufacturer)
         put :update, :id => manufacturer.id, :manufacturer => valid_attributes
         response.should redirect_to(manufacturer)
       end
@@ -122,7 +122,7 @@ describe ManufacturersController do
 
     describe "with invalid params" do
       it "assigns the manufacturer as @manufacturer" do
-        manufacturer = Manufacturer.create! valid_attributes
+        manufacturer = Factory(:manufacturer)
         # Trigger the behavior that occurs when invalid params are submitted
         Manufacturer.any_instance.stub(:save).and_return(false)
         put :update, :id => manufacturer.id, :manufacturer => {}
@@ -130,7 +130,7 @@ describe ManufacturersController do
       end
 
       it "re-renders the 'edit' template" do
-        manufacturer = Manufacturer.create! valid_attributes
+        manufacturer = Factory(:manufacturer)
         # Trigger the behavior that occurs when invalid params are submitted
         Manufacturer.any_instance.stub(:save).and_return(false)
         put :update, :id => manufacturer.id, :manufacturer => {}
@@ -141,14 +141,14 @@ describe ManufacturersController do
 
   describe "DELETE destroy" do
     it "destroys the requested manufacturer" do
-      manufacturer = Manufacturer.create! valid_attributes
+      manufacturer = Factory(:manufacturer)
       expect {
         delete :destroy, :id => manufacturer.id
       }.to change(Manufacturer, :count).by(-1)
     end
 
     it "redirects to the manufacturers list" do
-      manufacturer = Manufacturer.create! valid_attributes
+      manufacturer = Factory(:manufacturer)
       delete :destroy, :id => manufacturer.id
       response.should redirect_to(manufacturers_url)
     end
