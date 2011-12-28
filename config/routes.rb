@@ -1,3 +1,5 @@
 Twincrest::Application.routes.draw do
-  root :to => 'home#index'
+  resources :manufacturers
+
+  root :to => 'manufacturers#index'
 end
