@@ -1,0 +1,5 @@
+<tr>
+	<td><%= link_to manufacturer.name, manufacturer %></td>
+  <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer) if current_user %></td>
+  <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete if current_user %></td>
+</tr>

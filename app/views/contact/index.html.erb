@@ -1,0 +1,12 @@
+<% title 'Contact Us' %>
+
+<p>Use this form to send us your questions or feedback, or to report any problems you experience.</p>
+<p>Please enter information in all fields.</p>
+
+<%= labeled_form_for @message, url: contact_send_message_path do |f| %>
+	<%= f.text_field :name %>
+	<%= f.email_field :email %>
+	<%= f.text_field :subject %>
+	<%= f.text_area :comments %>
+	<%= f.submit 'Send message' %>
+<% end %>

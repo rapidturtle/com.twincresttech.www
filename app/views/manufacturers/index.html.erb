@@ -1,21 +1,16 @@
-<h1>Listing manufacturers</h1>
+<% title "Manufacturers" %>
 
 <table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @manufacturers.each do |manufacturer| %>
-  <tr>
-    <td><%= link_to 'Show', manufacturer %></td>
-    <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer) %></td>
-    <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <thead>
+		<tr>
+			<th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+  </thead>
+	<tbody>
+	<%= render @manufacturers %>
+	</tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Manufacturer', new_manufacturer_path %>
+<p><%= link_to 'New Manufacturer', new_manufacturer_path if current_user %></p>

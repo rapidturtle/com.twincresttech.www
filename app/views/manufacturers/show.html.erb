@@ -1,5 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @manufacturer.name %></h2>
+<%= simple_format @manufacturer.description %>
 
+<ul>
+	<li><%= link_to 'Web Site', @manufacturer.web_site, target: :blank %></li>
+	<li><%= link_to 'Support Site', @manufacturer.support_site, target: :blank %></li>
+</ul>
 
+<% if current_user %>
 <%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
 <%= link_to 'Back', manufacturers_path %>
+<% end %>
