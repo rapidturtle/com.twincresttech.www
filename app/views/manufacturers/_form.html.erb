@@ -3,8 +3,8 @@
 
 	<%= f.text_field :name %>
 	<%= f.text_area :description %>
-	<%= f.text_field :web_site %>
-	<%= f.text_field :support_site %>
+	<%= f.text_field :web_site, placeholder: "http://example.com" %>
+	<%= f.text_field :support_site, placeholder: "http://example.com" %>
 	
 	<%= f.submit %>
 <% end %>

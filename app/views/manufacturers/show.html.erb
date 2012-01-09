@@ -1,4 +1,4 @@
-<h2><%= @manufacturer.name %></h2>
+<% title @manufacturer.name %>
 <%= simple_format @manufacturer.description %>
 
 <ul>
@@ -8,5 +8,5 @@
 
 <% if current_user %>
 <%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
-<%= link_to 'Back', manufacturers_path %>
+<%= link_to 'Back', root_path %>
 <% end %>

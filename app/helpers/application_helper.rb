@@ -25,11 +25,16 @@ module ApplicationHelper
   # Custom tab_to helper for site navigation  
   def tab_to(*args, &block)
     # Extract the incoming :match argument and construct the regular expression
-    hash = args.last.delete(:match)
-    re = %r{\A/?(#{hash.join('|')}).*?\z}
+    id = args.last.delete(:id)
+    match = args.last.delete(:match)
+    re = %r{\A/?(#{match.join('|')}).*?\z}
     
     # Add class="selected" if the current path matches and construct the link
-    args.last[:class] += ' selected' if re.match(params[:controller])
-    link_to *args, &block
+    if re.match(params[:controller])
+      args.last[:class].nil? ? args.last[:class] = 'selected' : args.last[:class] += ' selected'
+    end
+    content_tag :li, id: id, class: args.last.delete(:class) do
+      link_to *args, &block
+    end
   end
 end

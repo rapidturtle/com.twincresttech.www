@@ -20,25 +20,25 @@
 	</head>
 	<body>
 		
-	<% if current_user %>
-	<div id="admin_bar"></div>
-	<% end %>
-	
-	<% flash.each do |key, msg| %>
-	<%= content_tag(:div, :id => key) do %>
-	<p><%= msg %></p>
-	<p><%= link_to 'OK', "javascript:document.getElementById('#{key}').style.display='none';", :class => "button" %></p>
-	<% end %>
-	<% end %>
-	
-	<div id="container">
-		<header>
+		<% if current_user %>
+		<div id="admin_bar"></div>
+		<% end %>
+
+		<% flash.each do |key, msg| %>
+		<%= content_tag(:div, :id => key) do %>
+		<p><%= msg %></p>
+		<p><%= link_to 'OK', "javascript:document.getElementById('#{key}').style.display='none';", :class => "button" %></p>
+		<% end %>
+		<% end %>
+		
+		<header id="site-header">
+			<h1 class="ir">Twincrest Technologies</h1>
 			<nav>
-				<ul>
-					<li><%= link_to "Manufacturers", root_path %></li>
-					<li><%= link_to "Support", '' %></li>
-					<li><%= link_to "About Us", about_path %></li>
-					<li><%= link_to "Contact Us", contact_path %></li>
+				<ul class="clearfix">
+					<%= tab_to "Manufacturers", root_path, id: "nav-button-1", match: ['manufacturers'] %>
+					<%= tab_to "Support", '', id: "nav-button-2", match: ['support'] %>
+					<%= tab_to "About Us", about_path, id: "nav-button-3", match: ['about'] %>
+					<%= tab_to "Contact Us", contact_path, id: "nav-button-4", match: ['contact'] %>
 				</ul>
 			</nav>
 		</header>
@@ -48,7 +48,7 @@
 			<% end %>
 			<%= yield %>
 		</div>
-		<footer>
+		<footer id="site-footer">
 			<nav>
 				<ul>
 					<li><%= link_to 'About Us', about_path %></li>
@@ -61,23 +61,22 @@
 					<% end %>
 				</ul>
 			</nav>
-			<p>&copy; 2008&ndash;<%= Time.now.year %> Twincrest Technologies. All rights reserved.</p>
+			<p id="copyright">&copy; 2008&ndash;<%= Time.now.year %> Twincrest Technologies, Inc. All rights reserved.</p>
 		</footer>
-	</div> <!--! end of #container -->
 	
-	<%= javascript_include_tag "application" %>
+		<%= javascript_include_tag "application" %>
 	
-	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
+		<script>
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
 	
-	<!--[if lt IE 7 ]>
-		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-		<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-	<![endif]-->
+		<!--[if lt IE 7 ]>
+			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+			<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+		<![endif]-->
 	
 </body>
 </html>

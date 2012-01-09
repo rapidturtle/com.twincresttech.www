@@ -1,4 +1,7 @@
 Twincrest::Application.routes.draw do
+  # Root
+  root to: 'manufacturers#index'
+  
   # About
   get '/about' => 'about#index', as: :about
   
@@ -13,7 +16,4 @@ Twincrest::Application.routes.draw do
   
   # Resources
   resources :manufacturers, :users, :sessions
-  
-  # Root
-  root to: 'manufacturers#index'
 end

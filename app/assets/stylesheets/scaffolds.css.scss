@@ -1,42 +1,219 @@
+// SASS MIXINS
+
+@mixin border-radius {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+
+/* DEFAULTS */
+
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  background: #eee image-url('bkg_Page.png') repeat-x;
+  color: #999;
+  font-family: UbuntuRegular, verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-a {
-  color: #000;
-  &:visited {
-    color: #666;
+/* FLASH */
+#error, #notice, #alert {
+	background: rgba(0, 0, 0, 0.8);
+	border: 1px solid black;
+	@include border-radius;
+	-moz-box-shadow: 0 3px 6px rgba(32, 32, 32, 0.5);
+	-webkit-box-shadow: 0 3px 6px rgba(32, 32, 32, 0.5);
+	box-shadow: 0 3px 6px rgba(32, 32, 32, 0.5);
+	color: #ccc;
+	font-size: 12pt;
+	line-height: 18pt;
+	left: 0;
+	margin: auto;
+	padding: 25px 25px 15px 25px;
+	position: absolute;
+	right: 0;
+	text-align: left;
+	top: 180px;
+	width: 350px;
+	z-index: 5;
+	a.button {
+		background-color: #333;
+		border: 1px solid #666;
+		@include border-radius;
+		color: #999;
+		padding: 6px 12px;
+		text-decoration: none;
+		text-shadow: 0 -1px 1px #000;
+		&:hover { background-color: #444; }
 	}
-  &:hover {
-    color: #fff;
-    background-color: #000;
+	p:first-child { margin-top: 0; }
+}
+
+
+/* SITE HEADER */
+
+header#site-header {
+	margin: 0 auto 16px auto;
+	width: 927px;
+	h1 {
+		background: transparent image-url('banner_logo.png') 50% 50% no-repeat;
+		height: 107px;
+		margin: 0;
+		padding: 0;
+	}
+	nav {
+		margin: 0 auto;
+		width: 904px;
+		ul {
+			li {
+				color: #ddd;
+				float: left;
+				font-family: UbuntuMedium;
+				font-size: 12px;
+				line-height: 16px;
+				height: 16px;
+				padding: 9px 10px 13px 10px;
+				text-align: center;
+				text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+				text-transform: uppercase;
+				&:hover,
+				&.selected {
+					color: #000;
+					text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+				}
+				a {
+					color: inherit;
+					display: block;
+					height: inherit;
+					width: inherit;
+					margin: -8px -10px -14px -10px;
+					padding: inherit;
+					text-decoration: none;
+					&:hover {
+						color: #000;
+					}
+				}
+				&#nav-button-1 {
+					background: transparent image-url('bkg_Navigation.png') 0 0 no-repeat;
+					width: 190px;
+					&:hover,
+					&.selected { background: transparent image-url('bkg_Navigation.png') 0 -39px no-repeat; }
+				}
+				&#nav-button-2 {
+					background: transparent image-url('bkg_Navigation.png') -210px 0 no-repeat;
+					width: 223px;
+					&:hover,
+					&.selected { background: transparent image-url('bkg_Navigation.png') -210px -39px no-repeat; }
+				}
+				&#nav-button-3 {
+					background: transparent image-url('bkg_Navigation.png') -453px 0 no-repeat;
+					width: 191px;
+					&:hover,
+					&.selected { background: transparent image-url('bkg_Navigation.png') -453px -39px no-repeat; }
+				}
+				&#nav-button-4 {
+					background: transparent image-url('bkg_Navigation.png') -664px 0 no-repeat;
+					width: 219px;
+					&:hover,
+					&.selected { background: transparent image-url('bkg_Navigation.png') -664px -39px no-repeat; }
+				}
+			}
+		}
 	}
 }
+
+
+/* MAIN */
+
+#main {
+	background: #fff;
+	border: 1px solid #ccc;
+	@include border-radius;
+	margin: 0 auto 20px auto;
+	padding: 20px;
+	min-height: 500px;
+	width: 860px;
+	h1#title {
+		color: #000;
+		font-size: 18px;
+		line-height: 27px;
+		margin-top: 0;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+		&:after { color: #fc0; content: " ||";}
+	}
+	input, select, textarea {
+	  font-family: UbuntuRegular, verdana, arial, helvetica, sans-serif;
+//	  font-size: 14px;
+//	  line-height: 21px;
+	}
+
+	pre {
+	  background-color: #eee;
+	  padding: 10px;
+	  font-size: 11px;
+	}
+
+	a {
+	  color: #069;
+		text-decoration: none;
+	  &:visited {
+	    color: #609;
+		}
+	  &:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+/* SITE FOOTER */
+
+footer#site-footer {
+	font-size: 12px;
+	line-height: 24px;
+	margin: 0 auto 40px auto;
+	padding: 0;
+	width: 900px;
+	#copyright {
+		background: transparent image-url('footer_logo.png') 0 50% no-repeat;
+		display: inline-block;
+		margin: 0;
+		padding-left: 30px;
+	}
+	nav {
+		float: right;
+		ul li {
+			border-left: 1px solid #ccc;
+			display: inline;
+			margin-left: 0.75em;
+			padding-left: 0.75em;
+			&:first-child {
+				border-left: none;
+				margin-left: 0;
+				padding-left: 0;
+			}
+			a {
+				color: #999;
+				text-decoration: none;
+				&:hover { text-decoration: underline; }
+			}
+		}
+	}
+}
+
 
 div {
   &.field, &.actions {
     margin-bottom: 10px;
 	}
-}
-
-#notice {
-  color: green;
+	&.actions {
+		border-top: 1px dotted #ddd;
+		margin-top: 20px;
+		padding-top: 20px;
+	}
 }
 
 .field_with_errors {
@@ -56,14 +233,14 @@ div {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 13px;
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
 	}
   ul li {
-    font-size: 12px;
+    font-size: 13px;
     list-style: square;
 	}
 }
