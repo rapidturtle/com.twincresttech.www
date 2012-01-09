@@ -19,6 +19,7 @@ end
 
 gem 'acts_as_list'
 gem 'aws-sdk'
+gem 'carrierwave'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

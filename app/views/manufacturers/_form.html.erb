@@ -1,7 +1,8 @@
-<%= labeled_form_for @manufacturer do |f| %>
+<%= labeled_form_for @manufacturer, html: {multipart: true} do |f| %>
   <%= f.error_messages %>
 
 	<%= f.text_field :name %>
+	<%= f.file_field :image %>
 	<%= f.text_area :description %>
 	<%= f.text_field :web_site, placeholder: "http://example.com" %>
 	<%= f.text_field :support_site, placeholder: "http://example.com" %>
