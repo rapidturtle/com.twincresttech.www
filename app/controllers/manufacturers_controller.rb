@@ -2,7 +2,7 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers
   # GET /manufacturers.json
   def index
-    @manufacturers = Manufacturer.all
+    @manufacturers = Manufacturer.order("position")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +79,12 @@ class ManufacturersController < ApplicationController
       format.html { redirect_to manufacturers_url }
       format.json { head :ok }
     end
+  end
+  
+  def sort
+    params[:manufacturer].each_with_index do |id, index|
+      Manufacturer.update_all({ position: index + 1 }, { id: id })
+    end
+    render nothing: true
   end
 end

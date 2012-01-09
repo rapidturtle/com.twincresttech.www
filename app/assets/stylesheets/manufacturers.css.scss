@@ -1,3 +1,43 @@
 // Place all the styles related to the manufacturers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#manufacturers {
+	margin: -10px;
+	div.manufacturer {
+		border: 1px solid #999;
+	//	-moz-border-radius: 12px;
+	//	-webkit-border-radius: 12px;
+	//	border-radius: 12px;
+		display: block;
+		position: relative;
+		float: left;
+		height: 158px;
+		width: 158px;
+		margin: 10px;
+		padding: 20px;
+		a:first-child {
+			display: block;
+			height: inherit;
+			width: inherit;
+			margin: -20px;
+			padding: inherit;
+		}
+		p.admin-links {
+			display: inline;
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			a, span {
+				display: inline-block;
+				height: 20px;
+				width: 20px;
+				margin: 0;
+				padding: 0;
+				&.move { background: transparent image-url('icons.png') 0 -20px no-repeat; cursor: move; }
+				&.edit { background: transparent image-url('icons.png') 0 0 no-repeat; }
+				&.delete { background: transparent image-url('icons.png') -20px 0 no-repeat; }
+			}
+		}
+	}
+}

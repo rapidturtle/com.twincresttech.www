@@ -1,5 +1,10 @@
-<tr>
-	<td><%= link_to manufacturer.name, manufacturer %></td>
-  <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer) if current_user %></td>
-  <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete if current_user %></td>
-</tr>
+<%= content_tag_for :div, manufacturer do %>
+	<%= link_to manufacturer.name, manufacturer %>
+	<% if current_user %>
+	<p class="admin-links">
+		<span class="move ir">Move</span>
+		<%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: "edit ir" %>
+		<%= link_to 'Destroy', manufacturer, class: "delete ir", confirm: 'Are you sure?', method: :delete %>
+	</p>
+	<% end %>
+<% end %>

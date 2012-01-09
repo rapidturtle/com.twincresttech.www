@@ -15,5 +15,8 @@ Twincrest::Application.routes.draw do
   get '/sign_out' => 'sessions#destroy', as: :sign_out
   
   # Resources
-  resources :manufacturers, :users, :sessions
+  resources :users, :sessions
+  resources :manufacturers do
+    collection { post :sort }
+  end
 end

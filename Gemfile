@@ -17,6 +17,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'acts_as_list'
 gem 'aws-sdk'
 gem 'jquery-rails'
 
