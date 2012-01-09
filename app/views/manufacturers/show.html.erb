@@ -2,8 +2,12 @@
 <%= simple_format @manufacturer.description %>
 
 <ul>
+	<% if @manufacturer.web_site.present? %>
 	<li><%= link_to 'Web Site', @manufacturer.web_site, target: :blank %></li>
+	<% end %>
+	<% if @manufacturer.support_site.present? %>
 	<li><%= link_to 'Support Site', @manufacturer.support_site, target: :blank %></li>
+	<% end %>
 </ul>
 
 <% if current_user %>
