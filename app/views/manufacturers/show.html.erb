@@ -1,4 +1,6 @@
 <% title @manufacturer.name %>
+
+<%= image_tag @manufacturer.image_url.to_s %>
 <%= simple_format @manufacturer.description %>
 
 <ul>

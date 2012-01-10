@@ -21,6 +21,7 @@ gem 'acts_as_list'
 gem 'aws-sdk'
 gem 'carrierwave'
 gem 'jquery-rails'
+gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

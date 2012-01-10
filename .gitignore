@@ -5,5 +5,5 @@
 config/database.yml
 db/*.sqlite3
 log/*.log
-public/assets/
+public/uploads/
 tmp/
