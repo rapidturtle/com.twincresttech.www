@@ -21,8 +21,7 @@ set :use_sudo, false
 
 # application details
 set :application, "com.twincresttech.www"
-
-set :domain,    "ve.eyequeue.us"
+set :domain,      "ve.eyequeue.us"
 
 role :app, "#{domain}"
 role :web, "#{domain}"
@@ -38,8 +37,9 @@ namespace :deploy do
   namespace :config do
     desc "Create symlink to shared files and folders on each release."
     task :symlink do
-      # run "ln -nfs #{shared_path}/config/aws.yml #{release_path}/config/aws.yml"
+      run "ln -nfs #{shared_path}/config/aws.yml #{release_path}/config/aws.yml"
       run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+      run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
     end
   end
   

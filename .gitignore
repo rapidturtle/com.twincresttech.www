@@ -2,6 +2,7 @@
 .bundle
 .powenv
 .sass-cache
+config/aws.yml
 config/database.yml
 db/*.sqlite3
 log/*.log
