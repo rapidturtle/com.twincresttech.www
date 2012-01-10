@@ -1,13 +1,15 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require 'capistrano/ext/multistage'
 require 'rvm/capistrano'
 require 'bundler/capistrano'
 
-default_run_options[:pty]   = true
-ssh_options[:forward_agent] = true
-
+# Set staging options before bringing in multistage code—it's just the way the
+# extension works
 set :stages, %w(staging production)
 set :default_stage, 'staging'
+require 'capistrano/ext/multistage'
+
+default_run_options[:pty]   = true
+ssh_options[:forward_agent] = true
 
 set :rvm_ruby_string, "1.9.3@com.twincresttech.www"
 
