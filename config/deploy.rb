@@ -1,11 +1,15 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'capistrano/ext/multistage'
 require 'rvm/capistrano'
 require 'bundler/capistrano'
 
 default_run_options[:pty]   = true
 ssh_options[:forward_agent] = true
 
-set :rvm_ruby_string, "1.9.2@twincrest"
+set :stages, %w(staging production)
+set :default_stage, 'staging'
+
+set :rvm_ruby_string, "1.9.3@com.twincresttech.www"
 
 # repository elsewhere
 set :scm,        :git
@@ -13,15 +17,12 @@ set :repository, "git@github.com:rapidturtle/com.twincresttech.www.git"
 set :deploy_via, :remote_cache
 
 # user settings
-set :user,     "deploy"
 set :use_sudo, false
 
 # application details
 set :application, "com.twincresttech.www"
 
 set :domain,    "ve.eyequeue.us"
-set :deploy_to, "/home/deploy/#{application}"
-set :rails_env, "production"
 
 role :app, "#{domain}"
 role :web, "#{domain}"
