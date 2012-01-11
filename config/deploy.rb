@@ -41,6 +41,8 @@ namespace :deploy do
     task :symlink do
       run "ln -nfs #{shared_path}/config/aws.yml #{release_path}/config/aws.yml"
       run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+      run "ln -nfs #{shared_path}/config/unicorn.rb #{release_path}/config/unicorn.rb"
+      run "ln -nfs #{shared_path}/config/unicorn_init.sh #{release_path}/config/unicorn_init.sh"
       run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
     end
   end
