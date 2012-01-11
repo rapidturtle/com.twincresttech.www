@@ -33,8 +33,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    # run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    run "#{try_sudo} cd #{release_path} && bundle exec unicorn restart"
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
   
   namespace :config do
