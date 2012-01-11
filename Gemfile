@@ -48,7 +48,7 @@ group :test do
   gem 'webrat'
 end
 
-group :production do
+group :staging, :production do
   gem 'execjs'
   gem 'therubyracer'
 end
