@@ -34,6 +34,7 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "cd #{release_path} && bundle exec unicorn restart"
   end
   
   namespace :config do
@@ -47,6 +48,6 @@ namespace :deploy do
     end
   end
   
-  after "deploy:update_code", "deploy:config:symlink"
+  # after "deploy:update_code", "deploy:config:symlink"
   before "deploy:assets:precompile", "deploy:config:symlink"
 end
