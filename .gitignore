@@ -4,6 +4,8 @@
 .sass-cache
 config/aws.yml
 config/database.yml
+config/unicorn.rb
+config/unicorn_init.sh
 db/*.sqlite3
 log/*.log
 public/uploads/
