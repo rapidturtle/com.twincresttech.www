@@ -1,6 +1,6 @@
 <% title @manufacturer.name %>
 
-<%= image_tag @manufacturer.image_url.to_s %>
+<%= image_tag @manufacturer.image_url.to_s if @manufacturer.image_url.present? %>
 <%= simple_format @manufacturer.description %>
 
 <ul>
