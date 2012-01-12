@@ -1,7 +1,3 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require 'rvm/capistrano'
-require 'bundler/capistrano'
-
 # Set staging options before bringing in multistage code—it's just the way the
 # extension works
 set :stages, %w(staging production)
@@ -11,7 +7,11 @@ require 'capistrano/ext/multistage'
 default_run_options[:pty]   = true
 ssh_options[:forward_agent] = true
 
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'rvm/capistrano'
 set :rvm_ruby_string, "1.9.3@com.twincresttech.www"
+
+require 'bundler/capistrano'
 
 # repository elsewhere
 set :scm,        :git
@@ -41,8 +41,8 @@ namespace :deploy do
     task :symlink do
       run "ln -nfs #{shared_path}/config/aws.yml #{release_path}/config/aws.yml"
       run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      run "ln -nfs #{shared_path}/config/unicorn.rb #{release_path}/config/unicorn.rb"
-      run "ln -nfs #{shared_path}/config/unicorn_init.sh #{release_path}/config/unicorn_init.sh"
+      # run "ln -nfs #{shared_path}/config/unicorn.rb #{release_path}/config/unicorn.rb"
+      # run "ln -nfs #{shared_path}/config/unicorn_init.sh #{release_path}/config/unicorn_init.sh"
       run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
     end
   end
