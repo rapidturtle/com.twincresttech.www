@@ -25,9 +25,9 @@
 		<% end %>
 
 		<% flash.each do |key, msg| %>
-		<%= content_tag(:div, :id => key) do %>
+		<%= content_tag(:div, id: key) do %>
 		<p><%= msg %></p>
-		<p><%= link_to 'OK', "javascript:document.getElementById('#{key}').style.display='none';", :class => "button" %></p>
+		<p><%= link_to 'OK', nil, class: "button" %></p>
 		<% end %>
 		<% end %>
 		
