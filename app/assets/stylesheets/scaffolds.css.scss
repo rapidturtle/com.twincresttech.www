@@ -17,6 +17,28 @@ body {
   line-height: 21px;
 }
 
+a {
+	&.web {
+		background: transparent image-url('icons.png') 0 -120px no-repeat;
+		display: inline-block;
+		height: 20px;
+		padding-left: 25px;
+	}
+	&.support {
+		background: transparent image-url('icons.png') 0 -140px no-repeat;
+		display: inline-block;
+		height: 20px;
+		padding-left: 25px;
+	}
+}
+
+img {
+	&.across {
+		margin-left: -50px;
+		margin-right: -50px;
+	}
+}
+
 
 /* FLASH */
 #error, #notice, #alert {
@@ -132,15 +154,14 @@ header#site-header {
 	border: 1px solid #ccc;
 	@include border-radius;
 	margin: 0 auto 20px auto;
-	padding: 20px;
+	padding: 50px;
 	min-height: 500px;
-	width: 860px;
+	width: 800px;
 	h1#title {
 		color: #000;
 		font-size: 18px;
 		line-height: 27px;
-		margin-top: 0;
-		margin-bottom: 30px;
+		margin: -30px auto 20px -30px;
 		text-transform: uppercase;
 		&:after { color: #fc0; content: " ||";}
 	}

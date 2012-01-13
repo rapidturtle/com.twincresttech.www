@@ -9,17 +9,19 @@
 }
 
 .card {
+	background-color: #eee;
 	border: 1px solid #ccc;
 	@include border-radius;
 	padding: 40px;
 	ul {
 		display: inline-block;
 		float: left;
+		list-style: none;
 		margin: 0;
 		padding: 0;
 		width: 33%;
 		&:first-child {
-			background: transparent image-url('about_logo.png') -20px 50% no-repeat;
+			background: transparent image-url('about_logo.png') -25px 50% no-repeat;
 			padding-left: 33%;
 		}
 	}
