@@ -87,7 +87,7 @@ header#site-header {
 	}
 	nav {
 		margin: 0 auto;
-		width: 904px;
+		width: 903px;
 		ul {
 			li {
 				color: #ddd;
@@ -119,27 +119,27 @@ header#site-header {
 				}
 				&#nav-button-1 {
 					background: transparent image-url('bkg_Navigation.png') 0 0 no-repeat;
-					width: 190px;
+					width: 206px;
 					&:hover,
 					&.selected { background: transparent image-url('bkg_Navigation.png') 0 -39px no-repeat; }
 				}
 				&#nav-button-2 {
-					background: transparent image-url('bkg_Navigation.png') -210px 0 no-repeat;
-					width: 223px;
+					background: transparent image-url('bkg_Navigation.png') -226px 0 no-repeat;
+					width: 206px;
 					&:hover,
-					&.selected { background: transparent image-url('bkg_Navigation.png') -210px -39px no-repeat; }
+					&.selected { background: transparent image-url('bkg_Navigation.png') -226px -39px no-repeat; }
 				}
 				&#nav-button-3 {
-					background: transparent image-url('bkg_Navigation.png') -453px 0 no-repeat;
-					width: 191px;
+					background: transparent image-url('bkg_Navigation.png') -452px 0 no-repeat;
+					width: 205px;
 					&:hover,
-					&.selected { background: transparent image-url('bkg_Navigation.png') -453px -39px no-repeat; }
+					&.selected { background: transparent image-url('bkg_Navigation.png') -452px -39px no-repeat; }
 				}
 				&#nav-button-4 {
-					background: transparent image-url('bkg_Navigation.png') -664px 0 no-repeat;
-					width: 219px;
+					background: transparent image-url('bkg_Navigation.png') -677px 0 no-repeat;
+					width: 206px;
 					&:hover,
-					&.selected { background: transparent image-url('bkg_Navigation.png') -664px -39px no-repeat; }
+					&.selected { background: transparent image-url('bkg_Navigation.png') -677px -39px no-repeat; }
 				}
 			}
 		}
