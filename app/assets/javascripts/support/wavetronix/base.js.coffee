@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-	$("input[type=submit]").css("display", "none")
+	$("#download_types_form input[type=submit], #product_lines_form input[type=submit]").css("display", "none")
 	$("#download_type").change ->
 		if(this.selectedIndex != 0)
 			$("#download_types_form").submit()
