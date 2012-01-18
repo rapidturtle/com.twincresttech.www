@@ -1,0 +1,8 @@
+<% title "#{@product.name} (#{@product.part_number}) Support" %>
+
+<% @product.downloads.group_by(&:download_type_id).each do |download_type_id, download| %>
+<h3><%= @download_types[download_type_id - 1].name.pluralize %></h3>
+<ul>
+	<%= render partial: "download", collection: @product.downloads %>
+</ul>
+<% end %>

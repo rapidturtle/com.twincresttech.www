@@ -8,7 +8,7 @@
 		<li><%= link_to 'Web Site', @manufacturer.web_site, target: :blank, class: "web" %></li>
 		<% end %>
 		<% if @manufacturer.support_site.present? %>
-		<li><%= link_to 'Support Site', @manufacturer.support_site, target: :blank, class: "support" %></li>
+		<li><%= link_to 'Support', @manufacturer.support_site, target: :blank, class: "support" %></li>
 		<% end %>
 	</ul>
 </div>

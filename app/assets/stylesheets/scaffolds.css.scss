@@ -158,17 +158,24 @@ header#site-header {
 	min-height: 500px;
 	width: 800px;
 	h1#title {
-		color: #000;
+		background: #000;
+		-webkit-border-top-left-radius: 6px;
+		-webkit-border-top-right-radius: 6px;
+		-moz-border-radius-topleft: 6px;
+		-moz-border-radius-topright: 6px;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		color: #fff;
 		font-size: 18px;
 		line-height: 27px;
-		margin: -30px auto 20px -30px;
+		margin: -50px -50px 50px -50px;
+		padding: 20px;
 		text-transform: uppercase;
 		&:after { color: #fc0; content: " ||";}
+		& + img.across { margin-top: -50px; }
 	}
 	input, select, textarea {
 	  font-family: UbuntuRegular, verdana, arial, helvetica, sans-serif;
-//	  font-size: 14px;
-//	  line-height: 21px;
 	}
 
 	pre {
