@@ -1,8 +1,10 @@
-<% title "#{@product.name} (#{@product.part_number}) Support" %>
+<% title "Wavetronix | #{@product.name} (#{@product.part_number}) Support" %>
 
-<% @product.downloads.group_by(&:download_type_id).each do |download_type_id, download| %>
-<h3><%= @download_types[download_type_id - 1].name.pluralize %></h3>
+<% @download_types.each do |download_type| %>
+<% unless @downloads[download_type.id].blank? %>
+<h3><%= "#{download_type.name}" %></h3>
 <ul>
-	<%= render partial: "download", collection: @product.downloads %>
+	<%= render partial: "download", collection: @downloads[download_type.id].sort_by { |d| d.title } %>
 </ul>
+<% end %>
 <% end %>
