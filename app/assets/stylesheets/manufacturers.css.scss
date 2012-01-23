@@ -44,7 +44,9 @@ div#manufacturers {
 
 div.mf-details {
 	img {
+		border: 1px solid #ccc;
 		float: left;
+		margin: 0 50px 50px 0;
 	}
 	ul {
 		list-style: none;
