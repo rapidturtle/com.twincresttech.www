@@ -157,6 +157,19 @@ header#site-header {
 	padding: 50px;
 	min-height: 500px;
 	width: 800px;
+	
+	section {
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+		column-count: 2;
+		-moz-column-gap: 50px;
+		-webkit-column-gap: 50px;
+		column-gap: 50px;
+		-moz-column-rule: 1px dotted #ccc;
+		-webkit-column-rule: 1px dotted #ccc;
+		column-rule: 1px dotted #ccc;
+	}
+	
 	h1#title {
 		background: #000;
 		-webkit-border-top-left-radius: 6px;
@@ -174,6 +187,12 @@ header#site-header {
 		&:after { color: #fc0; content: " ||";}
 		& + img.across { margin-top: -50px; }
 	}
+	
+	h2 {
+		color: #333;
+		font-size: 16px;
+	}
+	
 	input, select, textarea {
 	  font-family: UbuntuRegular, verdana, arial, helvetica, sans-serif;
 	}
