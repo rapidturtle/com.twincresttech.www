@@ -45,4 +45,5 @@ namespace :deploy do
   end
   
   before "deploy:assets:precompile", "deploy:config:symlink"
+  after "deploy:restart", "deploy:cleanup"
 end
