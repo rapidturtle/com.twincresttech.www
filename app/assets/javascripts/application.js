@@ -5,5 +5,14 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+
+(function($) {
+	$(document).ready(function() {
+		$("div#error a, div#notice a, div#alert a").click(function() {
+			$("div#error, div#notice, div#alert").fadeOut("fast");
+		});
+	});
+})(jQuery);

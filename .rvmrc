@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-ruby_string="ruby-1.9.2-p290"
-gemset_name="twincrest"
+ruby_string="ruby-1.9.3-p0"
+gemset_name="com.twincresttech.www"
 
 if rvm list strings | grep -q "${ruby_string}" ; then
 

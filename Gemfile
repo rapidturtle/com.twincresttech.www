@@ -1,29 +1,32 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', :groups => [:development, :test]
-gem 'mysql2', :group => :production
+gem 'sqlite3', groups: [:development, :test]
+gem 'pg',      groups: [:staging, :production]
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier',     '>= 1.0.3'
 end
 
+gem 'acts_as_list'
+gem 'carrierwave'
 gem 'jquery-rails'
+gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+# gem 'unicorn', groups: [:staging, :production]
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -33,15 +36,18 @@ gem 'capistrano-ext'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Test suite
-gem 'rspec-rails', :groups => [:development, :test]
+gem 'cucumber-rails', groups: [:development, :test]
+gem 'rspec-rails',    groups: [:development, :test]
 group :test do
-  gem 'capybara'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'guard-cucumber'
   gem 'guard-pow'
   gem 'guard-rspec'
+  gem 'webrat'
 end
 
-group :production do
+group :staging, :production do
   gem 'execjs'
   gem 'therubyracer'
 end
