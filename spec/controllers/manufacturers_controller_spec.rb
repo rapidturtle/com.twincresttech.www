@@ -26,6 +26,10 @@ describe ManufacturersController do
   def valid_attributes
     {}
   end
+  
+  def valid_session
+    {}
+  end
 
   describe "GET index" do
     it "assigns all manufacturers as @manufacturers" do
@@ -45,6 +49,7 @@ describe ManufacturersController do
 
   describe "GET new" do
     it "assigns a new manufacturer as @manufacturer" do
+      controller.stub(:current_user)
       get :new
       assigns(:manufacturer).should be_a_new(Manufacturer)
     end

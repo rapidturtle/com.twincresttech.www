@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -36,15 +36,19 @@ gem 'capistrano-ext'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Test suite
-gem 'cucumber-rails', groups: [:development, :test]
-gem 'rspec-rails',    groups: [:development, :test]
+gem 'cucumber-rails', require: false, groups: [:development, :test]
+gem 'rspec-rails', groups: [:development, :test]
 group :test do
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'guard-cucumber'
   gem 'guard-pow'
   gem 'guard-rspec'
-  gem 'webrat'
+  gem 'guard-spork'
+  gem 'spork'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :staging, :production do
