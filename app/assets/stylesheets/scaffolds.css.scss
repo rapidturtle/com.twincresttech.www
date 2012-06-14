@@ -12,7 +12,7 @@
 body {
   background: #eee image-url('bkg_Page.png') repeat-x;
   color: #999;
-  font-family: UbuntuRegular, verdana, arial, helvetica, sans-serif;
+  font-family: Ubuntu, verdana, arial, helvetica, sans-serif;
   font-size: 14px;
   line-height: 21px;
 }
@@ -92,8 +92,9 @@ header#site-header {
 			li {
 				color: #ddd;
 				float: left;
-				font-family: UbuntuMedium;
+				font-family: Ubuntu;
 				font-size: 12px;
+				font-weight: 500;
 				line-height: 16px;
 				height: 16px;
 				padding: 8px 10px 14px 10px;
@@ -180,6 +181,7 @@ header#site-header {
 		border-top-right-radius: 6px;
 		color: #fff;
 		font-size: 18px;
+		font-weight: 500;
 		line-height: 27px;
 		margin: -50px -50px 50px -50px;
 		padding: 20px;
@@ -205,7 +207,7 @@ header#site-header {
 	}
 	
 	input, select, textarea {
-	  font-family: UbuntuRegular, verdana, arial, helvetica, sans-serif;
+	  font-family: Ubuntu, verdana, arial, helvetica, sans-serif;
 	}
 
 	pre {
