@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.19'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -38,7 +38,7 @@ gem 'capistrano-ext'
 gem 'cucumber-rails', require: false, groups: [:development, :test]
 gem 'rspec-rails', groups: [:development, :test]
 group :test do
-  gem 'capybara-webkit'
+  # gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'guard-cucumber'
