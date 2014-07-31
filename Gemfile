@@ -27,10 +27,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use unicorn as the web server
 gem 'unicorn', groups: [:staging, :production]
 
-# Deploy with Capistrano
-gem 'capistrano'
-gem 'capistrano-ext'
-
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
@@ -48,4 +44,11 @@ group :test do
   gem 'spork'
   gem 'vcr'
   gem 'webmock'
+end
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
