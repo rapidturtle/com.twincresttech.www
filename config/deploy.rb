@@ -22,7 +22,7 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 # set :format, :pretty
 
 # Default value for :log_level is :debug
-# set :log_level, :debug
+set :log_level, :info
 
 # Default value for :pty is false
 # set :pty, true
@@ -64,7 +64,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
-        execute :rake, 'cache:clear'
+        execute :rake, 'tmp:cache:clear'
       end
     end
   end
