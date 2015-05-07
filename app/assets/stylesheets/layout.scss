@@ -1,2 +1,9 @@
 @import "foundation_and_overrides";
 @import "globals/all";
+
+.content {
+  @include panel();
+  background-color: $white;
+  border-radius: $global-radius;
+  margin-top: $global-vertical-spacing;
+}
