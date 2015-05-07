@@ -1,6 +1,8 @@
 language: ruby
 cache: bundler
 addons:
+  codeclimate:
+    repo_token: 59d27c9fc5a1c2a9379c602aec18e6d569c6cdce39f0118ffc0e954ed6af563a
   postgresql: '9.4'
 before_script:
 - psql -c "create database travis_ci_test;" -U postgres
