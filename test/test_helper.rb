@@ -29,7 +29,8 @@ google_oauth2_hash = {
 OmniAuth.config.add_mock(:google_oauth2, google_oauth2_hash)
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical
+  # order.
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
