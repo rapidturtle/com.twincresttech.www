@@ -4,6 +4,15 @@
       <p>&copy; 2008&ndash;<%= Time.now.year %> Twincrest Technologies, Inc. All rights reserved.</p>
     </div>
     <div class="medium-6 columns text-right">
+      <ul class="site-footer-links">
+        <li><%= link_to "About Us", nil %></li>
+        <li><%= link_to "Contact Us", nil %></li>
+        <li>
+          <%= link_to nil do %>
+            <%= content_tag :span, nil, class: "fa fa-sign-in", title: "Sign in" %>
+          <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 </footer>
