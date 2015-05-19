@@ -1,10 +1,10 @@
 <header class="site-header">
   <nav class="tab-bar hide-for-medium-up">
     <section class="left-small">
-      <%= link_to content_tag(:span), nil, class: 'left-off-canvas-toggle menu-icon' %>
+      <%= link_to content_tag(:span), nil, class: "left-off-canvas-toggle menu-icon" %>
     </section>
     <section class="middle tab-bar-section">
-      <h1 class="title"><span class="site-icon">Twincrest Technologies</span></h1>
+      <%= image_tag "small_header_logo.svg", alt: "Twincrest Technologies", class: "site-icon" %>
     </section>
   </nav>
 
@@ -23,15 +23,27 @@
         <% end %>
       </li>
       <li>
-        <%= link_to root_path do %>
+        <%= link_to about_path do %>
           <%= content_tag :span, nil, class: "fa fa-fw fa-info-circle" %>
-          About
+          About Us
         <% end %>
       </li>
       <li>
-        <%= link_to root_path do %>
+        <%= link_to contact_path do %>
           <%= content_tag :span, nil, class: "fa fa-fw fa-comment" %>
-          Contact
+          Contact Us
+        <% end %>
+      </li>
+      <li>
+        <%= link_to nil do %>
+          <%= content_tag :span, nil, class: "fa fa-fw fa-user" %>
+          Users
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/auth/google_oauth2" do %>
+          <%= content_tag :span, nil, class: "fa fa-fw fa-sign-in" %>
+          Sign in
         <% end %>
       </li>
     </ul>
@@ -41,7 +53,7 @@
     <nav class="top-bar show-for-medium-up">
       <ul class="title-area">
         <li class="name">
-          <h1><%= link_to "Twincrest Technologies", root_path, class: "site-icon" %></h1>
+          <%= image_tag "medium_header_logo.svg", alt: "Twincrest Technologies", class: "site-icon" %>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
@@ -54,19 +66,19 @@
             <% end %>
           </li>
           <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "support" %>">
-            <%= link_to root_path do %>
+            <%= link_to nil do %>
               <%# content_tag :span, nil, class: "fa fa-life-ring" %>
               Support
             <% end %>
           </li>
           <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "about" %>">
-            <%= link_to root_path do %>
+            <%= link_to about_path do %>
               <%# content_tag :span, nil, class: "fa fa-info-circle" %>
               About
             <% end %>
           </li>
           <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "contact" %>">
-            <%= link_to root_path do %>
+            <%= link_to contact_path do %>
               <%# content_tag :span, nil, class: "fa fa-comment" %>
               Contact
             <% end %>

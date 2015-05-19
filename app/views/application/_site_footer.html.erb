@@ -5,11 +5,11 @@
     </div>
     <div class="medium-6 columns text-right">
       <ul class="site-footer-links">
-        <li><%= link_to "About Us", nil %></li>
-        <li><%= link_to "Contact Us", nil %></li>
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
         <li>
-          <%= link_to nil do %>
-            <%= content_tag :span, nil, class: "fa fa-sign-in", title: "Sign in" %>
+          <%= link_to "/auth/google_oauth2" do %>
+            <%= content_tag :span, nil, class: "fa fa-sign-in", title: "Sign in with Google Apps" %>
           <% end %>
         </li>
       </ul>

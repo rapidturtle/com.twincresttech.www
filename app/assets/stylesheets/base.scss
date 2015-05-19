@@ -3,35 +3,14 @@
 @import "foundation_and_overrides";
 @import "globals/all";
 
-@mixin wide-margins {
-  margin-bottom: $panel-padding !important;
-  margin-left: -$panel-padding !important;
-  margin-right: -$panel-padding !important;
-  margin-top: -$panel-padding !important;
-}
-
 .button.google {
   background-color: $google-red;
 }
 
-.content {
-
-  h1 {
-    @include wide-margins;
-    background-color: $oil;
-    color: $white !important;
-    padding: $panel-padding;
-    text-transform: uppercase;
-
-    &::after {
-      color: $primary-color;
-      content: " ||"
-    }
-  }
-
-  .billboard {
-    @include wide-margins;
-    max-width: none;
+.rt-menu-icon {
+  color: $white;
+  &:hover {
+    color: inherit;
   }
 }
 
