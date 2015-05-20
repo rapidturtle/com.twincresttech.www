@@ -6,6 +6,7 @@
 **.orig
 
 config/database.yml
+config/variables.rb
 
 ## Environment normalization:
 /.bundle

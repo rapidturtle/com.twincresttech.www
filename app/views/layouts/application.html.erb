@@ -29,6 +29,7 @@
         <%= content_tag :div, class: "row" do %>
           <%= content_tag :div, class: "small-12 columns panel radius" do %>
             <%= debug params %>
+            <%= debug current_user %>
           <% end %>
         <% end if Rails.env == "development" %>
         <a class="exit-off-canvas"></a>

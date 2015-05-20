@@ -35,17 +35,29 @@
         <% end %>
       </li>
       <li>
-        <%= link_to nil do %>
-          <%= content_tag :span, nil, class: "fa fa-fw fa-user" %>
-          Users
-        <% end %>
+        <label>Administration</label>
       </li>
-      <li>
-        <%= link_to "/auth/google_oauth2" do %>
-          <%= content_tag :span, nil, class: "fa fa-fw fa-sign-in" %>
-          Sign in
-        <% end %>
-      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to nil do %>
+            <%= content_tag :span, nil, class: "fa fa-fw fa-user" %>
+            Users
+          <% end %>
+        </li>
+        <li>
+          <%= link_to sign_out_path, method: :delete do %>
+            <%= content_tag :span, nil, class: "fa fa-fw fa-sign-out" %>
+            Sign out
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "/auth/google_oauth2" do %>
+            <%= content_tag :span, nil, class: "fa fa-fw fa-sign-in" %>
+            Sign in
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </aside>
 

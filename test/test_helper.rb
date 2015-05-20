@@ -18,7 +18,7 @@ OmniAuth.config.test_mode = true
 
 google_oauth2_hash = {
   provider: "google_oauth2",
-  uid: "0123456789",
+  uid: "1234567890",
   info: {
     email: "mickey.mouse@disney.com",
     first_name: "Mickey",
@@ -36,7 +36,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   def manually_sign_in(user)
     OmniAuth.config.mock_auth[:google_oauth2]
-    visit sign_in_path
+    visit root_path
     click_link nil, href: "/auth/google_oauth2"
   end
 

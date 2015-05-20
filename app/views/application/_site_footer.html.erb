@@ -1,15 +1,23 @@
 <footer class="site-footer">
   <div class="row">
-    <div class="medium-6 columns">
+    <div class="medium-6 columns small-only-text-center">
       <p>&copy; 2008&ndash;<%= Time.now.year %> Twincrest Technologies, Inc. All rights reserved.</p>
     </div>
-    <div class="medium-6 columns text-right">
+    <div class="medium-6 columns text-right hide-for-small-only">
       <ul class="site-footer-links">
-        <li><%= link_to "About Us", about_path %></li>
-        <li><%= link_to "Contact Us", contact_path %></li>
+        <li><%= link_to_unless_current "Manufacturers", root_path %></li>
+        <li><%= link_to_unless_current "Support", nil %></li>
+        <li><%= link_to_unless_current "About Us", about_path %></li>
+        <li><%= link_to_unless_current "Contact Us", contact_path %></li>
         <li>
-          <%= link_to "/auth/google_oauth2" do %>
-            <%= content_tag :span, nil, class: "fa fa-sign-in", title: "Sign in with Google Apps" %>
+          <% if current_user %>
+            <%= link_to sign_out_path, method: :delete do %>
+              <%= content_tag :span, nil, class: "fa fa-sign-out", title: "Sign out" %>
+            <% end %>
+          <% else %>
+            <%= link_to "/auth/google_oauth2" do %>
+              <%= content_tag :span, nil, class: "fa fa-sign-in", title: "Sign in" %>
+            <% end %>
           <% end %>
         </li>
       </ul>
