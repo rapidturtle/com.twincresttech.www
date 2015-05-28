@@ -7,6 +7,8 @@ class CreateUser < ActiveRecord::Migration
       t.string :last_name
       t.string :email, index: true
       t.string :auth_token
+
+      t.timestamps
     end
   end
 end
