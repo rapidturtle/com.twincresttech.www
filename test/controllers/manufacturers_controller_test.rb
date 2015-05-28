@@ -6,5 +6,10 @@ describe ManufacturersController do
     must_respond_with :success
     assigns(:manufacturers).wont_be_nil
   end
+
+  it "gets new" do
+    get :new
+    must_respond_with :success
+    assigns(:manufacturer).wont_be_nil
   end
 end

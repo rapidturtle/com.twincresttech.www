@@ -1,0 +1,18 @@
+<%= form_for @manufacturer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 4 %>
+  <%= f.label :web_url %>
+  <%= f.url_field :web_url, placeholder: "http://www.twincresttech.com" %>
+  <%= f.label :support_url %>
+  <%= f.url_field :support_url, placeholder: "http://www.twincresttech.com/support" %>
+  <%= f.label :logo do %>
+    Logo
+    <%= content_tag :span, data: { tooltip: true }, aria: { haspopup: true }, class: "has-tip tip-right radius", title: "When choosing an image to upload, make sure it is at least 400 pixels high or wide for best resluts." do %>
+      <%= content_tag :span, nil, class: "fa fa-question-circle" %>
+    <% end %>
+  <% end %>
+  <%= f.file_field :logo, accept: "image/png, image/jpeg, image/gif, image/svg+xml" %>
+  <%= f.submit class: "button expand radius" %>
+<% end %>
