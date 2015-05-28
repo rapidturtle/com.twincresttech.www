@@ -18,4 +18,10 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  document.addEventListener("page:restore", function () {
+    app.init();
+  });
+
+  $(document).foundation();
+});
