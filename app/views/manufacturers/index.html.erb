@@ -2,6 +2,10 @@
   <h1>Manufacturers</h1>
     <%= image_tag "hero_Manufacturers.jpg", alt: "Manufacturers" %>
 </header>
-<p>
-  This is a pragraph. How does it render?
-</p>
+
+<%= content_tag :section do %>
+  <%= link_to new_manufacturer_path, class: "button radius" do %>
+    <%= content_tag :span, nil, class: "fa fa-plus" %>
+    Add a Manufacturer
+  <% end %>
+<% end # if current_user %>

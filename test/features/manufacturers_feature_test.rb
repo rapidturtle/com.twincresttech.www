@@ -3,7 +3,26 @@ require "test_helper"
 feature "Manufacturers" do
   scenario "visit home page" do
     visit root_path
-    page.must_have_selector "h1", text: "Twincrest Technologies"
+    page.must_have_selector "h1", text: "Manufacturers"
+  end
+
+  describe "admin links" do
+    given(:manufacturer) { Factory :manufacturer }
+
+    scenario "hide `new` link when signed out" do
+      visit root_path
+      page.wont_have_link nil, href: new_manufacturer_path
+    end
+
+    scenario "hide `edit` link when signed out" do
+      visit root_path
+      page.wont_have_link nil, href: edit_manufacturer_path(manufacturer)
+    end
+
+    scenario "hide `delete` link when signed out" do
+      visit root_path
+      page.wont_have_link nil, href: manufacturer_path(manufacturer)
+    end
   end
 
   describe "create a new manufacturer" do
