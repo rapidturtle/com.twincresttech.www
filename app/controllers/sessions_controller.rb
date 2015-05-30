@@ -4,4 +4,9 @@ class SessionsController < ApplicationController
     cookies[:auth_token] = user.auth_token
     redirect_to root_path, notice: "#{user.name} signed in successfully!"
   end
+
+  def destroy
+    cookies.delete :auth_token
+    redirect_to root_path
+  end
 end
