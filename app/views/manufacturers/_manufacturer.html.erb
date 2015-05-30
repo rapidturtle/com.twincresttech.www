@@ -16,7 +16,7 @@
           <%= link_to edit_manufacturer_path(manufacturer), title: %Q(Edit "#{manufacturer.name}") do %>
             <span class="fa fa-pencil"></span>
           <% end %>
-          <%= link_to manufacturer_path(manufacturer), data: { confirm: %Q(Are you sure you want to delete "#{manufacturer.name}"? This cannot be undone.) }, method: :delete, title: %Q(Delete "#{manufacturer.name}") do %>
+          <%= link_to manufacturer_path(manufacturer), id: "delete-manufacturer-#{manufacturer.id}", data: { confirm: %Q(Are you sure you want to delete "#{manufacturer.name}"? This cannot be undone.) }, method: :delete, title: %Q(Delete "#{manufacturer.name}") do %>
             <span class="fa fa-trash"></span>
           <% end %>
         </div>

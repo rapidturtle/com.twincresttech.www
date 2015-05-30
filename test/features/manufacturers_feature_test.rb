@@ -51,9 +51,10 @@ feature "Manufacturers" do
   end
 
   scenario "delete a manufacturer" do
+    manually_sign_in Factory(:user)
     manufacturer = Factory(:manufacturer, name: "Deleted Manufacturer")
     visit root_path
-    click_link nil, href: manufacturer_path(manufacturer)
+    find("#delete-manufacturer-#{manufacturer.id}").click
     page.wont_have_content "Deleted Manufacturer"
   end
 end
