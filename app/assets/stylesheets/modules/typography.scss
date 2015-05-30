@@ -2,6 +2,10 @@
 @import "globals/all";
 
 $text-column-counts: 2 3 4 5 6;
+$text-column-gap: rem-calc(50);
+$text-column-rule-color: $smoke;
+$text-column-rule-style: none;
+$text-column-rule-width: rem-calc(1);
 
 @each $text-column-count in $text-column-counts {
 
@@ -9,6 +13,12 @@ $text-column-counts: 2 3 4 5 6;
     -moz-column-count: $text-column-count;
     -webkit-column-count: $text-column-count;
     column-count: $text-column-count;
+    -moz-column-gap: $text-column-gap;
+    -webkit-column-gap: $text-column-gap;
+    column-gap: $text-column-gap;
+    -moz-column-rule: $text-column-rule-width $text-column-rule-style $text-column-rule-color;
+    -webkit-column-rule: $text-column-rule-width $text-column-rule-style $text-column-rule-color;
+    column-rule: $text-column-rule-width $text-column-rule-style $text-column-rule-color;
   }
 
   @for $i from 1 through length($align-class-names) {
@@ -19,6 +29,12 @@ $text-column-counts: 2 3 4 5 6;
         -moz-column-count: $text-column-count;
         -webkit-column-count: $text-column-count;
         column-count: $text-column-count;
+        -moz-column-gap: $text-column-gap;
+        -webkit-column-gap: $text-column-gap;
+        column-gap: $text-column-gap;
+        -moz-column-rule: $text-column-rule-width $text-column-rule-style $text-column-rule-color;
+        -webkit-column-rule: $text-column-rule-width $text-column-rule-style $text-column-rule-color;
+        column-rule: $text-column-rule-width $text-column-rule-style $text-column-rule-color;
       }
     }
   }
