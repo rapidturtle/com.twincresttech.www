@@ -5,14 +5,11 @@ ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 
-require "database_cleaner"
 require "minitest/pride"
 require "minitest/rails"
 require "minitest/rails/capybara"
 
 Dir[File.expand_path("test/factories/**/*.rb")].each { |file| require file }
-
-DatabaseCleaner.strategy = :transaction
 
 OmniAuth.config.test_mode = true
 
@@ -42,15 +39,5 @@ class ActiveSupport::TestCase
 
   def sign_in(user)
     cookies[:auth_token] = user.auth_token
-  end
-end
-
-class Minitest::Test
-  def setup
-    DatabaseCleaner.start
-  end
-
-  def teardown
-    DatabaseCleaner.clean
   end
 end

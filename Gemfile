@@ -32,11 +32,11 @@ end
 
 group :test do
   gem "codeclimate-test-reporter", require: nil
-  gem "database_cleaner"
   gem "guard-livereload"
   gem "guard-minitest"
   gem "guard-pow"
   gem "minifacture"
+  gem "minitest"
   gem "minitest-rails"
   gem "minitest-rails-capybara"
   gem "rake"

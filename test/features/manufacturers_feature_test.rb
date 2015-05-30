@@ -40,7 +40,20 @@ feature "Manufacturers" do
       fill_in :manufacturer_web_url, with: "http://www.wavetronix.com"
       fill_in :manufacturer_support_url, with: "http://www.wavetronix.com/support"
       click_button "Create"
-      page.must_have_selector ".alert-box", text: "success"
+      page.must_have_selector ".alert-box", text: "Success"
     end
+
+    scenario "with invalid data" do
+      fill_in :manufacturer_name, with: ""
+      click_button "Create"
+      page.must_have_text "error"
+    end
+  end
+
+  scenario "delete a manufacturer" do
+    manufacturer = Factory(:manufacturer, name: "Deleted Manufacturer")
+    visit root_path
+    click_link nil, href: manufacturer_path(manufacturer)
+    page.wont_have_content "Deleted Manufacturer"
   end
 end

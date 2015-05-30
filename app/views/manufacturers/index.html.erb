@@ -3,9 +3,13 @@
     <%= image_tag "hero_Manufacturers.jpg", alt: "Manufacturers" %>
 </header>
 
+<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+  <%= render @manufacturers %>
+</ul>
+
 <%= content_tag :section do %>
   <%= link_to new_manufacturer_path, class: "button radius" do %>
     <%= content_tag :span, nil, class: "fa fa-plus" %>
     Add a Manufacturer
   <% end %>
-<% end # if current_user %>
+<% end if current_user %>
