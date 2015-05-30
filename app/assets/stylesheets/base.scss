@@ -9,6 +9,7 @@
 
 .rt-menu-icon {
   color: $white;
+
   &:hover {
     color: inherit;
   }
@@ -32,7 +33,7 @@
     color: $aluminum;
 
     &:hover {
-      color: scale-color($aluminum, $lightness: -40%)
+      color: scale-color($aluminum, $lightness: -40%);
     }
   }
 }

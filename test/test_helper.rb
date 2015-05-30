@@ -31,7 +31,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def manually_sign_in(user)
+  def manually_sign_in(_user)
     OmniAuth.config.mock_auth[:google_oauth2]
     visit root_path
     click_link nil, href: "/auth/google_oauth2"
