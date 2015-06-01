@@ -6,5 +6,6 @@ class StaticPagesController < ApplicationController
   end
 
   def support
+    @manufacturers = Manufacturer.where.not("support_url = ?", "")
   end
 end

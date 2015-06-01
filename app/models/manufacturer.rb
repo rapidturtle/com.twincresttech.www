@@ -1,4 +1,6 @@
 class Manufacturer < ActiveRecord::Base
+  mount_uploader :logo, LogoUploader
+
   validates :name,
             :description, presence: true
   validates :web_url, presence: true,

@@ -14,5 +14,6 @@ describe StaticPagesController do
   it "gets support" do
     get :support
     must_respond_with :success
+    assigns(:manufacturers).wont_be_nil
   end
 end

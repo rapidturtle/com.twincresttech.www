@@ -17,7 +17,7 @@
   <%= f.url_field :support_url, placeholder: "http://www.twincresttech.com/support" %>
   <%= f.label :logo do %>
     Logo
-    <%= content_tag :span, data: { tooltip: true }, aria: { haspopup: true }, class: "has-tip tip-right radius", title: "When choosing an image to upload, make sure it is at least 400 pixels high or wide for best resluts." do %>
+    <%= content_tag :span, data: { tooltip: true }, aria: { haspopup: true }, class: "has-tip tip-right radius", title: "When choosing an image to upload, make sure it is at least 450 pixels high or wide for best resluts. Also, SVG images are preferred, followed by PNG images." do %>
       <%= content_tag :span, nil, class: "fa fa-question-circle" %>
     <% end %>
   <% end %>

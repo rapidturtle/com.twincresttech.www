@@ -44,6 +44,6 @@ private
   end
 
   def manufacturer_params
-    params.require(:manufacturer).permit(:name, :description, :web_url, :support_url)
+    params.require(:manufacturer).permit(:name, :description, :web_url, :support_url, :logo)
   end
 end
