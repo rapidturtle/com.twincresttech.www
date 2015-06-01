@@ -10,4 +10,9 @@ feature "Static pages" do
     visit contact_path
     page.must_have_selector "h1", text: "Contact Us"
   end
+
+  scenario "visit Support page" do
+    visit support_path
+    page.must_have_selector "h1", text: "Support"
+  end
 end

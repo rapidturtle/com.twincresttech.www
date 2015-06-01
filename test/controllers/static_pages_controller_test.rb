@@ -10,4 +10,9 @@ describe StaticPagesController do
     get :contact
     must_respond_with :success
   end
+
+  it "gets support" do
+    get :support
+    must_respond_with :success
+  end
 end

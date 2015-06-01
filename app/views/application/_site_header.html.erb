@@ -17,7 +17,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to root_path do %>
+        <%= link_to support_path do %>
           <%= content_tag :span, nil, class: "fa fa-fw fa-life-ring" %>
           Support
         <% end %>
@@ -78,7 +78,7 @@
             <% end %>
           </li>
           <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "support" %>">
-            <%= link_to nil do %>
+            <%= link_to support_path do %>
               <%# content_tag :span, nil, class: "fa fa-life-ring" %>
               Support
             <% end %>
