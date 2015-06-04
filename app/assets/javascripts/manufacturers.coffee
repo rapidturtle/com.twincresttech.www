@@ -2,4 +2,4 @@ jQuery ->
   $("#manufacturers").sortable
     handle: ".handle"
     update: ->
-      $.post($(@).data("update-path"), $(@).sortable("serialize"))
+      $.post($(this).data("update-path"), $(this).sortable("serialize"))
