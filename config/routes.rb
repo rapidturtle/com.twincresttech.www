@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get "contact", to: "static_pages#contact"
   get "support", to: "static_pages#support"
 
-  resources :manufacturers
+  resources :manufacturers do
+    post :sort, on: :collection
+  end
 
   root to: "manufacturers#index"
 end

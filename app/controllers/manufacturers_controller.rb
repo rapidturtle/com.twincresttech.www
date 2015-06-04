@@ -37,6 +37,13 @@ class ManufacturersController < ApplicationController
     redirect_to root_path
   end
 
+  def sort
+    params[:manufacturer].each_with_index do |id, index|
+      Manufacturer.where(id: id).update_all({ position: index + 1 })
+    end
+    render nothing: true
+  end
+
 private
 
   def find_manufacturer

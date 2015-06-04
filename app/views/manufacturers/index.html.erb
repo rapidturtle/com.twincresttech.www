@@ -3,7 +3,7 @@
     <%= image_tag "hero_Manufacturers.jpg", alt: "Manufacturers" %>
 </header>
 
-<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+<ul id="manufacturers" class="small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-update-path="<%= sort_manufacturers_path %>">
   <%= render @manufacturers %>
 </ul>
 
