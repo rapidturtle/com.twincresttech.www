@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - 2.2.2
-  - 2.2.1
 cache: bundler
 addons:
   codeclimate:
@@ -19,3 +18,4 @@ deploy:
   on:
     repo: rapidturtle/com-twincresttech-www
     branch: master
+    rvm: 2.2.2
