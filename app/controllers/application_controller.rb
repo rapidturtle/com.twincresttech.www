@@ -1,32 +1,12 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-  
-  before_filter :authenticate_if_staging
-  
-private
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
 
-  def authenticate!
-    unless current_user
-      store_location
-      redirect_to sign_in_path
-    end
-  end
-  helper_method :authenticate!
+  private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by(auth_token: cookies[:auth_token]) if cookies[:auth_token]
   end
   helper_method :current_user
-
-  def store_location
-    session[:return_to] = request.fullpath
-  end
-  
-  def authenticate_if_staging
-    if request.domain == "rapidturtle.com"
-      authenticate_or_request_with_http_basic do |name, password|
-        name == 'twincrest' && password == 'twincrest'
-      end
-    end
-  end
 end

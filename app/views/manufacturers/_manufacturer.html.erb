@@ -1,10 +1,26 @@
-<%= content_tag_for :div, manufacturer do %>
-	<%= link_to manufacturer.name, manufacturer, style: "background: transparent url('#{manufacturer.image_url(:thumb).to_s}') 50% 50% no-repeat", class: "#{manufacturer.image_url.present? ? 'ir' : '' }" %>
-	<% if current_user %>
-	<p class="admin-links">
-		<span class="move ir">Move</span>
-		<%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: "edit ir" %>
-		<%= link_to 'Destroy', manufacturer, class: "delete ir", confirm: 'Are you sure?', method: :delete %>
-	</p>
-	<% end %>
+<%= content_tag_for :li, manufacturer do %>
+  <div class="panel radius">
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <%= link_to manufacturer do %>
+          <%= image_tag manufacturer.logo.url, alt: manufacturer.name %>
+        <% end %>
+      </div>
+    </div>
+    <% if current_user %>
+      <div class="row">
+        <div class="small-6 columns">
+          <span class="fa fa-bars handle"></span>
+        </div>
+        <div class="small-6 columns text-right">
+          <%= link_to edit_manufacturer_path(manufacturer), title: %Q(Edit "#{manufacturer.name}") do %>
+            <span class="fa fa-pencil"></span>
+          <% end %>
+          <%= link_to manufacturer_path(manufacturer), id: "delete-manufacturer-#{manufacturer.id}", data: { confirm: %Q(Are you sure you want to delete "#{manufacturer.name}"? This cannot be undone.) }, method: :delete, title: %Q(Delete "#{manufacturer.name}") do %>
+            <span class="fa fa-trash"></span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

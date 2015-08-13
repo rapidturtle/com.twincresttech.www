@@ -1,8 +1,15 @@
 class Manufacturer < ActiveRecord::Base
-  attr_accessible :name, :description, :web_site, :support_site, :image
-  acts_as_list
-  mount_uploader :image, ImageUploader
-  
-  validates :name, presence: true, on: :create
-  validates :description, presence: true, on: :create
+  mount_uploader :logo, LogoUploader
+
+  validates :name,
+            :description, presence: true
+  validates :web_url, presence: true,
+                       format: { with: URI.regexp, message: "must be a valid URL" }
+  validates :support_url, format: { with: URI.regexp, message: "must be a valid URL" }, if: Proc.new { |manufacturer| manufacturer.support_url.present? }
+
+  default_scope { order "position" }
+
+  def to_param
+    "#{id}-#{name}".parameterize
+  end
 end

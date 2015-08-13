@@ -1,13 +1,26 @@
-<%= labeled_form_for @manufacturer, html: {multipart: true} do |f| %>
-  <%= f.error_messages %>
-
-	<%= f.text_field :name %>
-	<p>When choosing an image to upload, make sure it is at least 400 pixels high or wide for best resluts.</p>
-	<%= f.file_field :image %>
-	<%= f.text_area :description %>
-	<p>To link to an external web site, enter the complete URL (i.e., <code>http://www.wavetronix.com</code>). If you omit <code>http://</code>from the URL, the link will look for that resource on your domain (i.e., <code>www.wavetronix.com</code> will link to <code>http://www.twincresttech.com/manufacturers/www.wavetronix.com</code>).</p>
-	<%= f.text_field :web_site, placeholder: "http://example.com" %>
-	<%= f.text_field :support_site, placeholder: "http://example.com" %>
-	
-	<%= f.submit %>
+<%= form_for @manufacturer do |f| %>
+  <%= content_tag :div, class: "alert-box alert radius" do %>
+    <h4><%= pluralize @manufacturer.errors.count, "error" %> kept this form from submitting:</h4>
+    <ul>
+      <% @manufacturer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end if @manufacturer.errors.any? %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 4 %>
+  <%= f.label :web_url %>
+  <%= f.url_field :web_url, placeholder: "http://www.twincresttech.com" %>
+  <%= f.label :support_url %>
+  <%= f.url_field :support_url, placeholder: "http://www.twincresttech.com/support" %>
+  <%= f.label :logo do %>
+    Logo
+    <%= content_tag :span, data: { tooltip: true }, aria: { haspopup: true }, class: "has-tip tip-right radius", title: "When choosing an image to upload, make sure it is at least 450 pixels high or wide for best resluts. Also, SVG images are preferred, followed by PNG images." do %>
+      <%= content_tag :span, nil, class: "fa fa-question-circle" %>
+    <% end %>
+  <% end %>
+  <%= f.file_field :logo, accept: "image/png, image/jpeg, image/gif, image/svg+xml" %>
+  <%= f.submit class: "button expand radius" %>
 <% end %>

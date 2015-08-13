@@ -1,0 +1,22 @@
+<%= content_for :title, "Support" %>
+<header class="page-header">
+  <h1>Support</h1>
+  <%= image_tag "hero_Support.jpg", alt: "Support" %>
+</header>
+
+<section>
+  <div class="medium-text-columns-2 large-text-columns-3">
+    <h2 class="text-column-span-all">Need Help?</h2>
+    <p>Twincrest Technologies prides itself on providing first class support for the products we sell. This page provides links to many helpful support documents from our suppliers. In addition, we offer on-site installation assistance and factory certification trainings to ensure your systems are properly configured for optimal operation. To schedule installation assistance or a factory certification training course, please email <%= mail_to "support@twincresttech.com" %> or call <%= link_to "817-539-2200", "tel:+1-817-539-2200" %>.</p>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <h2>Manufacturer Support</h2>
+  <p>Get technical support information direct from the source. Select a manufacturer below to link directly to their support site.</p>
+  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+    <%= render @manufacturers %>
+  </ul>
+</section>

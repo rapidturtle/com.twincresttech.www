@@ -1,5 +1,9 @@
-# Load the rails application
+# Load the Rails application.
 require File.expand_path('../application', __FILE__)
 
-# Initialize the rails application
-Twincrest::Application.initialize!
+# Load environment variables
+variables = File.join(Rails.root, "config", "variables.rb")
+load(variables) if File.exists?(variables)
+
+# Initialize the Rails application.
+Rails.application.initialize!

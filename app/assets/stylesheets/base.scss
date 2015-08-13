@@ -1,0 +1,48 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "foundation_and_overrides";
+@import "globals/all";
+
+.button.google {
+  background-color: $google-red;
+}
+
+.handle {
+  color: $iron;
+  cursor: move;
+}
+
+.manufacturer-logo {
+  border: 1px solid $iron;
+}
+
+.rt-menu-icon {
+  color: $white;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.site-footer {
+  color: $aluminum;
+
+  li,
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+.site-footer-links {
+  @include inline-list();
+  color: $oil;
+  display: inline-block;
+
+  a {
+    color: $aluminum;
+
+    &:hover {
+      color: scale-color($aluminum, $lightness: -40%);
+    }
+  }
+}

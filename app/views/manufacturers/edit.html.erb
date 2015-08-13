@@ -1,6 +1,8 @@
-<% title "Editing #{@manufacturer.name}" %>
+<% content_for :title, "Edit #{@manufacturer.name}" %>
+<header class="page-header">
+  <h1>Edit <%= @manufacturer.name %></h1>
+</header>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @manufacturer %> |
-<%= link_to 'Back', root_path %>
+<section>
+  <%= render "form" %>
+</section>
