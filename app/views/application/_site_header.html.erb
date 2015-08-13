@@ -1,0 +1,102 @@
+<header class="site-header">
+  <nav class="tab-bar hide-for-medium-up">
+    <section class="left-small">
+      <%= link_to content_tag(:span), nil, class: "left-off-canvas-toggle menu-icon" %>
+    </section>
+    <section class="middle tab-bar-section">
+      <%= image_tag "small_header_logo.svg", alt: "Twincrest Technologies", class: "site-icon" %>
+    </section>
+  </nav>
+
+  <aside class="left-off-canvas-menu">
+    <ul class="off-canvas-list">
+      <li>
+        <%= link_to root_path do %>
+          <%= content_tag :span, nil, class: "fa fa-fw fa-cubes" %>
+          Manufacturers
+        <% end %>
+      </li>
+      <li>
+        <%= link_to support_path do %>
+          <%= content_tag :span, nil, class: "fa fa-fw fa-life-ring" %>
+          Support
+        <% end %>
+      </li>
+      <li>
+        <%= link_to about_path do %>
+          <%= content_tag :span, nil, class: "fa fa-fw fa-info-circle" %>
+          About Us
+        <% end %>
+      </li>
+      <li>
+        <%= link_to contact_path do %>
+          <%= content_tag :span, nil, class: "fa fa-fw fa-comment" %>
+          Contact Us
+        <% end %>
+      </li>
+      <li>
+        <label>Administration</label>
+      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to nil do %>
+            <%= content_tag :span, nil, class: "fa fa-fw fa-user" %>
+            Users
+          <% end %>
+        </li>
+        <li>
+          <%= link_to sign_out_path, method: :delete do %>
+            <%= content_tag :span, nil, class: "fa fa-fw fa-sign-out" %>
+            Sign out
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "/auth/google_oauth2" do %>
+            <%= content_tag :span, nil, class: "fa fa-fw fa-sign-in" %>
+            Sign in
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+
+  <div class="contain-to-grid">
+    <nav class="top-bar show-for-medium-up">
+      <ul class="title-area">
+        <li class="name">
+          <%= image_tag "medium_header_logo.svg", alt: "Twincrest Technologies", class: "site-icon" %>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="<%= :active if params[:controller] =~ /^manufacturers/ %>">
+            <%= link_to root_path do %>
+              <%# content_tag :span, nil, class: "fa fa-cubes" %>
+              Manufacturers
+            <% end %>
+          </li>
+          <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "support" %>">
+            <%= link_to support_path do %>
+              <%# content_tag :span, nil, class: "fa fa-life-ring" %>
+              Support
+            <% end %>
+          </li>
+          <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "about" %>">
+            <%= link_to about_path do %>
+              <%# content_tag :span, nil, class: "fa fa-info-circle" %>
+              About
+            <% end %>
+          </li>
+          <li class="<%= :active if params[:controller] == "static_pages" && params[:action] == "contact" %>">
+            <%= link_to contact_path do %>
+              <%# content_tag :span, nil, class: "fa fa-comment" %>
+              Contact
+            <% end %>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</header>

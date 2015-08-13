@@ -1,92 +1,56 @@
 class ManufacturersController < ApplicationController
-  before_filter :authenticate!, except: [:index, :show]
-  
-  # GET /manufacturers
-  # GET /manufacturers.json
+  before_filter :find_manufacturer
+
   def index
-    @manufacturers = Manufacturer.order("position")
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @manufacturers }
-    end
+    @manufacturers = Manufacturer.all
   end
 
-  # GET /manufacturers/1
-  # GET /manufacturers/1.json
   def show
-    @manufacturer = Manufacturer.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @manufacturer }
-    end
   end
 
-  # GET /manufacturers/new
-  # GET /manufacturers/new.json
   def new
     @manufacturer = Manufacturer.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @manufacturer }
-    end
   end
 
-  # GET /manufacturers/1/edit
   def edit
-    @manufacturer = Manufacturer.find(params[:id])
   end
 
-  # POST /manufacturers
-  # POST /manufacturers.json
   def create
-    @manufacturer = Manufacturer.new(params[:manufacturer])
-
-    respond_to do |format|
-      if @manufacturer.save
-        format.html { redirect_to @manufacturer, notice: 'Manufacturer was successfully created.' }
-        format.json { render json: @manufacturer, status: :created, location: @manufacturer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @manufacturer.errors, status: :unprocessable_entity }
-      end
+    @manufacturer = Manufacturer.new(manufacturer_params)
+    if @manufacturer.save
+      redirect_to root_path, notice: %Q(Successfully created "#{@manufacturer.name}".)
+    else
+      render :new
     end
   end
 
-  # PUT /manufacturers/1
-  # PUT /manufacturers/1.json
   def update
-    @manufacturer = Manufacturer.find(params[:id])
-
-    respond_to do |format|
-      if @manufacturer.update_attributes(params[:manufacturer])
-        format.html { redirect_to @manufacturer, notice: 'Manufacturer was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @manufacturer.errors, status: :unprocessable_entity }
-      end
+    if @manufacturer.update_attributes(manufacturer_params)
+      redirect_to root_path, notice: %Q(Successfully updated "#{@manufacturer.name}.")
+    else
+      render :edit
     end
   end
 
-  # DELETE /manufacturers/1
-  # DELETE /manufacturers/1.json
   def destroy
-    @manufacturer = Manufacturer.find(params[:id])
     @manufacturer.destroy
-
-    respond_to do |format|
-      format.html { redirect_to manufacturers_url }
-      format.json { head :ok }
-    end
+    redirect_to root_path
   end
-  
+
   def sort
     params[:manufacturer].each_with_index do |id, index|
-      Manufacturer.update_all({ position: index + 1 }, { id: id })
+      Manufacturer.where(id: id).update_all({ position: index + 1 })
     end
     render nothing: true
+  end
+
+private
+
+  def find_manufacturer
+    @manufacturer = Manufacturer.find(params[:id]) if params[:id]
+  end
+
+  def manufacturer_params
+    params.require(:manufacturer).permit(:name, :description, :web_url, :support_url, :logo)
   end
 end

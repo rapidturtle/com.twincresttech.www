@@ -1,0 +1,43 @@
+<%= content_for :title, "Contact Us" %>
+<header class="page-header">
+  <h1>Contact Us</h1>
+</header>
+
+<section>
+  <div class="row">
+    <div class="medium-4 columns text-center">
+      <%= image_tag "logo_ContactUs.svg", alt: "Twincrest Technologies" %>
+    </div>
+    <div class="medium-4 columns">
+      <ul class="vcard">
+        <li class="address">
+          <span class="fn">Headquarters</span>
+          <span class="street-address">Hwy 1187, Ste 104</span>
+          <span class="locality">Mansfield</span>
+          <span class="region">TX</span>
+          <span class="postal-code">76063</span>
+        </li>
+        <li class="phone">
+          <%= link_to "817-539-2200", "tel:+1-817-539-2200" %>
+        </li>
+        <li class="email">
+          <%= mail_to "sales@twincresttech.com" %>
+        </li>
+      </ul>
+    </div>
+    <div class="medium-4 columns">
+      <ul class="vcard">
+        <li class="address">
+          <span class="fn">South Texas Office</span>
+          <span class="street-address">1736 Summergate</span>
+          <span class="locality">Conroe</span>
+          <span class="region">TX</span>
+          <span class="postal-code">77304</span>
+        </li>
+        <li class="phone">
+          <%= link_to "281-739-5752", "tel:+1-281-739-5752" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

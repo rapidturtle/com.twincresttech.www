@@ -1,19 +1,23 @@
-<% title @manufacturer.name %>
+<% content_for :title, "Manufacturers || #{@manufacturer.name}" %>
+<header class="page-header">
+  <%= content_tag :h1, @manufacturer.name %>
+</header>
 
-<div class="mf-details">
-	<%= image_tag @manufacturer.image_url.to_s if @manufacturer.image_url.present? %>
-	<%= simple_format @manufacturer.description %>
-	<ul>
-		<% if @manufacturer.web_site.present? %>
-		<li><%= link_to 'Web Site', @manufacturer.web_site, target: :blank, class: "web" %></li>
-		<% end %>
-		<% if @manufacturer.support_site.present? %>
-		<li><%= link_to 'Support', @manufacturer.support_site, target: :blank, class: "support" %></li>
-		<% end %>
-	</ul>
-</div>
-
-<% if current_user %>
-<p><%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
-<%= link_to 'Back', root_path %></p>
-<% end %>
+<section class="row">
+  <div class="medium-6 large-4 columns">
+    <p><%= image_tag @manufacturer.logo.url, alt: @manufacturer.name, class: "manufacturer-logo" %></p>
+    <p>
+      <%= link_to @manufacturer.web_url, class: "button expand radius small", target: "_blank" do %>
+        <span class="fa fa-globe"></span>
+        Visit website
+      <% end %>
+      <%= link_to @manufacturer.support_url, class: "button expand radius small", target: "_blank" do %>
+        <span class="fa fa-life-ring"></span>
+        Get support
+      <% end if @manufacturer.support_url.present? %>
+    </p>
+  </div>
+  <div class="medium-6 large-8 columns large-text-columns-2">
+    <%= simple_format @manufacturer.description %>
+  </div>
+</section>

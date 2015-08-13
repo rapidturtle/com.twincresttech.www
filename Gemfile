@@ -1,54 +1,49 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rails', '3.2.19'
+gem "rails", "4.2.1"
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem "bcrypt", "~> 3.1.7"
+gem "carrierwave"
+gem "carrierwave-aws"
+gem "coffee-rails", "~> 4.1.0"
+gem "font-awesome-sass"
+gem "foundation-rails"
+gem "jbuilder", "~> 2.0"
+gem "jquery-rails"
+gem "jquery-ui-rails"
+gem "mini_magick"
+gem "omniauth-google-oauth2"
+gem "pg"
+gem "sass-rails", "~> 5.0"
+gem "turbolinks"
+gem "uglifier", ">= 1.3.0"
 
-gem 'pg'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem "sdoc", "~> 0.4.0", group: :doc
 
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier',     '>= 1.0.3'
-end
-
-gem 'acts_as_list'
-gem 'carrierwave'
-gem 'jquery-rails'
-gem 'rmagick'
-
-# To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-gem 'unicorn', groups: [:staging, :production]
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-# Test suite
-gem 'cucumber-rails', require: false, groups: [:development, :test]
-gem 'rspec-rails', groups: [:development, :test]
-group :test do
-  # gem 'capybara-webkit'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'guard-cucumber'
-  gem 'guard-pow'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'spork'
-  gem 'vcr'
-  gem 'webmock'
+group :development, :test do
+  gem "byebug"
+  gem "spring"
+  gem "web-console", "~> 2.0"
 end
 
 group :development do
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
+  gem "rack-livereload"
+end
+
+group :test do
+  gem "codeclimate-test-reporter", require: nil
+  gem "guard-livereload"
+  gem "guard-minitest"
+  gem "guard-pow"
+  gem "minifacture"
+  gem "minitest"
+  gem "minitest-rails"
+  gem "minitest-rails-capybara"
+  gem "rake"
+end
+
+group :production do
+  gem "therubyracer", platforms: :ruby
+  gem "unicorn"
 end

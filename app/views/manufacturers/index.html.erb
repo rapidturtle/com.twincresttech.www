@@ -1,8 +1,15 @@
-<% title "Manufacturers" %>
+<header class="page-header">
+  <h1>Manufacturers</h1>
+    <%= image_tag "hero_Manufacturers.jpg", alt: "Manufacturers" %>
+</header>
 
-<%= image_tag "hero_Manufacturers.jpg", alt: "road sign", class: "across" %>
-<div id="manufacturers" class="clearfix" data-update-url="<%= sort_manufacturers_path %>">
-	<%= render @manufacturers %>
-</div>
+<ul id="manufacturers" class="small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-update-path="<%= sort_manufacturers_path %>">
+  <%= render @manufacturers %>
+</ul>
 
-<p><%= link_to 'New Manufacturer', new_manufacturer_path if current_user %></p>
+<%= content_tag :section do %>
+  <%= link_to new_manufacturer_path, class: "button radius" do %>
+    <%= content_tag :span, nil, class: "fa fa-plus" %>
+    Add a Manufacturer
+  <% end %>
+<% end if current_user %>
