@@ -21,6 +21,6 @@
       <%= content_tag :span, nil, class: "fa fa-question-circle" %>
     <% end %>
   <% end %>
-  <%= f.file_field :logo, accept: "image/png, image/jpeg, image/gif, image/svg+xml" %>
+  <%= f.attachment_field :logo %>
   <%= f.submit class: "button expand radius" %>
 <% end %>

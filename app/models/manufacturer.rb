@@ -1,5 +1,5 @@
 class Manufacturer < ActiveRecord::Base
-  mount_uploader :logo, LogoUploader
+  attachment :logo, content_type: ["image/gif", "image/jpeg", "image/png", "image/svg+xml"]
 
   validates :name,
             :description, presence: true

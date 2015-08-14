@@ -3,7 +3,7 @@
     <div class="row">
       <div class="small-12 columns text-center">
         <%= link_to manufacturer do %>
-          <%= image_tag manufacturer.logo.url, alt: manufacturer.name %>
+          <%= image_tag attachment_url(manufacturer, :logo, filename: "#{manufacturer.name.parameterize}_logo_thumb"), alt: manufacturer.name %>
         <% end %>
       </div>
     </div>

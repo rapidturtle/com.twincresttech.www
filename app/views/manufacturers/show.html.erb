@@ -5,7 +5,7 @@
 
 <section class="row">
   <div class="medium-6 large-4 columns">
-    <p><%= image_tag @manufacturer.logo.url, alt: @manufacturer.name, class: "manufacturer-logo" %></p>
+    <p><%= image_tag attachment_url(@manufacturer, :logo, filename: "#{@manufacturer.name.parameterize}_logo"), alt: @manufacturer.name, class: "manufacturer-logo" %></p>
     <p>
       <%= link_to @manufacturer.web_url, class: "button expand radius small", target: "_blank" do %>
         <span class="fa fa-globe"></span>
