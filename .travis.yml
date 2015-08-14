@@ -1,7 +1,7 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.2.2
+- 2.2.2
 cache: bundler
 addons:
   codeclimate:
@@ -20,3 +20,6 @@ deploy:
     repo: rapidturtle/com-twincresttech-www
     branch: master
     rvm: 2.2.2
+notifications:
+  slack:
+    secure: Hhbli7awQ9XCYiXAUR4BEmtj4v2RWeN7tnqfWknVTciurMoUAqVHvz+AHtnv6tkrBqOxPTJTebaClWQrXuOa53fGHM4a6P3QPtv5qfI8i4kKBeQ2lORCCVMeBWEo0NiYGBM6EkJHrS+qxwcuopIu4b3npViAAGx/xLHmjWj/OVU=
