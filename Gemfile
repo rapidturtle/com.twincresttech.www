@@ -44,6 +44,5 @@ group :test do
 end
 
 group :production do
-  gem "therubyracer", platforms: :ruby
   gem "unicorn"
 end
