@@ -1,18 +1,14 @@
 @import "foundation_and_overrides";
 @import "globals/all";
 
-.vcard {
+.fa-li {
+  color: $iron;
+}
+
+[itemprop="streetAddress"] {
   display: block;
+}
 
-  .fn {
-    font-size: 1rem;
-  }
-
-  .street-address {
-    display: block;
-  }
-
-  .locality::after {
-    content: ",";
-  }
+[itemprop="addressLocality"]::after {
+  content: ",";
 }

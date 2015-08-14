@@ -3,39 +3,48 @@
   <h1>Contact Us</h1>
 </header>
 
-<section>
+<section itemscope itemtype="http://schema.org/Organization">
   <div class="row">
-    <div class="medium-4 columns text-center">
-      <%= image_tag "logo_ContactUs.svg", alt: "Twincrest Technologies" %>
+    <div class="medium-4 columns text-center" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <%= image_tag "logo_ContactUs.svg", alt: "Twincrest Technologies", itemprop: "contentUrl" %>
     </div>
     <div class="medium-4 columns">
-      <ul class="vcard">
-        <li class="address">
-          <span class="fn">Headquarters</span>
-          <span class="street-address">Hwy 1187, Ste 104</span>
-          <span class="locality">Mansfield</span>
-          <span class="region">TX</span>
-          <span class="postal-code">76063</span>
+      <ul class="fa-ul" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <li>
+          <strong itemprop="name">Headquarters</strong>
         </li>
-        <li class="phone">
-          <%= link_to "817-539-2200", "tel:+1-817-539-2200" %>
+        <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span class="fa fa-li fa-map-marker"></span>
+          <span itemprop="streetAddress">7625 Bellaire Drive South<br/>Suite 130</span>
+          <span itemprop="addressLocality">Fort Worth</span>
+          <span itemprop="addressRegion">TX</span>
+          <span itemprop="postalCode">76132</span>
         </li>
-        <li class="email">
-          <%= mail_to "sales@twincresttech.com" %>
+        <li>
+          <span class="fa fa-li fa-phone"></span>
+          <%= link_to "817-539-2200", "tel:+1-817-539-2200", itemprop: "telephone" %>
+        </li>
+        <li>
+          <span class="fa fa-li fa-envelope"></span>
+          <%= mail_to "sales@twincresttech.com", nil, itemprop: "email" %>
         </li>
       </ul>
     </div>
     <div class="medium-4 columns">
-      <ul class="vcard">
-        <li class="address">
-          <span class="fn">South Texas Office</span>
-          <span class="street-address">1736 Summergate</span>
-          <span class="locality">Conroe</span>
-          <span class="region">TX</span>
-          <span class="postal-code">77304</span>
+      <ul class="fa-ul" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <li>
+          <strong itemprop="name">South Texas Office</strong>
         </li>
-        <li class="phone">
-          <%= link_to "281-739-5752", "tel:+1-281-739-5752" %>
+        <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span class="fa fa-li fa-map-marker"></span>
+          <span itemprop="streetAddress">1736 Summergate</span>
+          <span itemprop="addressLocality">Conroe</span>
+          <span itemprop="addressRegion">TX</span>
+          <span itemprop="postalCode">77304</span>
+        </li>
+        <li>
+          <span class="fa fa-li fa-phone"></span>
+          <%= link_to "281-739-5752", "tel:+1-281-739-5752", itemprop: "telephone" %>
         </li>
       </ul>
     </div>
