@@ -37,6 +37,9 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  # Set asset directory for local asset precompilation.
+  config.assets.prefix = "/dev-assets"
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

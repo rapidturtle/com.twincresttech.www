@@ -1,6 +1,7 @@
 /coverage
 /log
 /tmp
+/public/dev-assets
 /public/system
 /public/uploads
 **.orig

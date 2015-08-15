@@ -15,7 +15,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
-//= require foundation
+//= require foundation/foundation
+//= require foundation/foundation.tooltip
 //= require turbolinks
 //= require_tree .
 
