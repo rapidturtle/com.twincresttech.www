@@ -10,6 +10,12 @@ describe SessionsController do
     must_respond_with :redirect
   end
 
+  it "redirects to home page with message on failure" do
+    get :fail, message: "There was a problem."
+    flash[:error].wont_be_nil
+    must_respond_with :redirect
+  end
+
   it "destroys a session" do
     user = Factory(:user)
     sign_in user
