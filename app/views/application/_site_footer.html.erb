@@ -11,11 +11,11 @@
         <li><%= link_to_unless_current "Contact Us", contact_path %></li>
         <li>
           <% if current_user %>
-            <%= link_to sign_out_path, method: :delete do %>
+            <%= link_to sign_out_path, id: "sign-out", method: :delete do %>
               <%= content_tag :span, nil, class: "fa fa-sign-out", title: "Sign out" %>
             <% end %>
           <% else %>
-            <%= link_to "/auth/google_oauth2" do %>
+            <%= link_to "/auth/google", id: "sign-in" do %>
               <%= content_tag :span, nil, class: "fa fa-sign-in", title: "Sign in" %>
             <% end %>
           <% end %>

@@ -2,9 +2,9 @@ require "test_helper"
 
 describe SessionsController do
   it "creates a new session" do
-    user = OmniAuth.config.mock_auth[:google_oauth2]
+    user = OmniAuth.config.mock_auth[:google]
     request.env["omniauth.auth"] = user
-    post :create, provider: :google_oauth2
+    post :create, provider: :google
     found_user = User.find_by(uid: user.uid)
     cookies[:auth_token].must_equal found_user.auth_token
     must_respond_with :redirect

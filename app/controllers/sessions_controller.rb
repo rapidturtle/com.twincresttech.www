@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-
   def create
     user = User.from_omniauth(request.env["omniauth.auth"])
     cookies[:auth_token] = user.auth_token
