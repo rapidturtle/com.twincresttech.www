@@ -34,7 +34,7 @@ class ActiveSupport::TestCase
   def manually_sign_in(_user)
     OmniAuth.config.mock_auth[:google]
     visit root_path
-    click_link nil, href: "/auth/google"
+    click_link "sign-in", href: "/auth/google"
   end
 
   def sign_in(user)
