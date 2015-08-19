@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def fail
-    flash[:error] = "There was a problem signing you in. #{debug params}"
+    flash[:error] = "There was a problem signing you in. #{params[:message]}"
     redirect_to root_path
   end
 
