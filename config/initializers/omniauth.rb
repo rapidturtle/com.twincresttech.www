@@ -5,6 +5,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     name: "google",
     scope: "email, profile",
     prompt: "select_account",
-    hd: "rapidturtle.com"
+    provider_ignores_state: true
   }
 end

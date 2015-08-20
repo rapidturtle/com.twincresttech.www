@@ -12,7 +12,7 @@ describe SessionsController do
 
   it "redirects to home page with message on failure" do
     get :fail, message: "There was a problem."
-    flash[:error].wont_be_nil
+    flash[:alert].wont_be_nil
     must_respond_with :redirect
   end
 
