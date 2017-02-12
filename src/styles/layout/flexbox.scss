@@ -1,0 +1,9 @@
+.site-content {
+  section {
+    padding: 1em;
+
+    &:nth-child(even) {
+      background-color: $bg-color-alternate;
+    }
+  }
+}
