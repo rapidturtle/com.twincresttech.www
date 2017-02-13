@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { BillboardModule } from './billboard/billboard.module';
+import { ManufacturersModule } from './manufacturers/manufacturers.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { BillboardModule } from './billboard/billboard.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    BillboardModule
+    ManufacturersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
