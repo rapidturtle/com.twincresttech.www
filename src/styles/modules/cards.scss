@@ -1,0 +1,28 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #fff;
+
+  margin-bottom: 1em;
+
+  figure {
+    // background-color: #333;
+    margin: 0;
+    text-align: center;
+
+    border-bottom: 1px solid #eee;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.card-content {
+  padding: 1em;
+}

@@ -1,0 +1,30 @@
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+  &::after {
+    content: " ||";
+    color: $highlight-color;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #000;
+}
+
+@media screen and (max-width: 425px) {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+}
