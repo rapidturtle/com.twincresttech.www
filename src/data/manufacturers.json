@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "name":        "Wavetronix",
+      "description": "Wavetronix LLC creates tools for intelligent transportation systems (ITS), including advanced radar sensors, power and communication solutions and data management appliances. Our innovative products and unmatched performance are changing the ITS industry and raising expectations for data detection, collection and management.\n\nWith a solid foundation in research and technology, Wavetronix is dedicated to increasing roadway efficiency and safety by providing traffic managers and engineers with solutions for enhanced data collection and analysis. Since its inception in 2000, Wavetronix has proven its leadership in the world ITS market by developing the most advanced technologies and then standing behind the quality of each product.\n\nAt Wavetronix, innovation is driven by talented engineering teams with experience in Radio Frequency (RF), microwave, electrical engineering, computer science and Internet technology. These teams are supported by sales, marketing and technical services departments dedicated to the success of each product.",
+      "logo":        "wavetronix_logo.svg",
+      "websiteURL":  "http://www.wavetronix.com",
+      "supportURL":  "http://www.wavetronix.com/support"
+    },
+    {
+      "name":        "TrafficNet",
+      "description": "TrafficNet, LLC is dedicated to making the flow of traffic safer, smarter, and simpler to manage. Our team develops products and software to assist traffic managers and the millions of drivers on the roads each day. Through creative innovation and meticulous design, TrafficNet delivers high-quality products and top-notch service. Let us help change the way you see traffic.",
+      "logo":        "trafficnet_logo.svg",
+      "websiteURL":  "http://www.trafficnetllc.com/",
+      "supportURL":  "http://www.trafficnetllc.com/contact"
+    },
+    {
+      "name":        "Intuicom",
+      "description": "Founded in 1999, Intuicom, Incorporated is a leader in providing ruggedized wireless solutions that enhance precision GPS applications, traffic control, transportation, and automation. Operating on all seven continents and in every possible climate, Intuicom solutions can satisfy the most demanding requirements.\n\nThey offer expertise in serial, I/O, Ethernet/IP as well as GPS and other geo-referenced specific applications. In addition, Intuicom provides OEM products as well as custom product development capabilities to those with unique applications or requirements. Their wireless networking products are available in several frequency bands, including license free bands in many locations. Special frequencies are also available for government and other qualified users.",
+      "logo":        "intuicom_logo.svg",
+      "websiteURL":  "http://www.intuicom.com/",
+      "supportURL":  "http://www.intuicom.com/contact-us"
+    },
+    {
+      "name":        "Computerized Traffic Control",
+      "description": "Computerized Traffic Control, Inc., (CTC) is a manufacturer of enclosure assemblies and related items for Freeway Traffic Management and ITS Systems, primarily in the State of Texas. Their product lines include cabinet assemblies, communication buildings, detector card racks, power supplies, surge protection equipment, Lane Control Signal control equipment and current sensing devices.",
+      "logo":        "computerized-traffic-control_logo.svg",
+      "websiteURL":  "http://www.computerizedtraffic.com/CTCI/Home.html",
+      "supportURL":  ""
+    }
+  ]
+}
