@@ -7,6 +7,7 @@ import { HtmlPipe } from './html.pipe';
   imports: [
     CommonModule
   ],
-  declarations: [HtmlPipe]
+  declarations: [HtmlPipe],
+  exports: [HtmlPipe]
 })
 export class SharedModule { }
