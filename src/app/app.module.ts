@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AboutModule } from './about/about.module';
+import { ContactModule } from './contact/contact.module';
 import { ManufacturersModule } from './manufacturers/manufacturers.module';
+import { SharedModule } from './shared/shared.module';
 import { SupportModule } from './support/support.module';
 
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     HttpModule,
     AboutModule,
+    ContactModule,
     ManufacturersModule,
-    SupportModule,
-    SharedModule
+    SharedModule,
+    SupportModule
   ],
   providers: [],
   bootstrap: [AppComponent]
