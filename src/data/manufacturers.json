@@ -25,8 +25,8 @@
       "name":        "Computerized Traffic Control",
       "description": "Computerized Traffic Control, Inc., (CTC) is a manufacturer of enclosure assemblies and related items for Freeway Traffic Management and ITS Systems, primarily in the State of Texas. Their product lines include cabinet assemblies, communication buildings, detector card racks, power supplies, surge protection equipment, Lane Control Signal control equipment and current sensing devices.",
       "logo":        "computerized-traffic-control_logo.svg",
-      "websiteURL":  "http://www.computerizedtraffic.com/CTCI/Home.html",
-      "supportURL":  ""
+      "websiteURL":  "http://www.computerizedtraffic.com/",
+      "supportURL":  "http://computerizedtraffic.com/contact/"
     }
   ]
 }
