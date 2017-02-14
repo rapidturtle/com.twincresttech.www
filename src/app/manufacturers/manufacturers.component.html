@@ -7,13 +7,13 @@
     </figure>
     <div class="card-content">
       <p [innerHtml]="manufacturer.description | html"></p>
-      <p>
+      <p *ngIf="manufacturer.websiteURL">
         <a href="{{ manufacturer.websiteURL }}" class="button wide rounded off-site" target="_blank">
           <i class="fa fa-globe"></i>
           Visit website
         </a>
       </p>
-      <p>
+      <p *ngIf="manufacturer.supportURL">
         <a href="{{ manufacturer.supportURL }}" class="button wide rounded off-site" target="_blank">
           <i class="fa fa-life-saver"></i>
           Get support
