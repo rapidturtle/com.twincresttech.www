@@ -1,8 +1,13 @@
+$highlight-color: #fc0;
+
 $bg-color-alternate: #eee;
 
-$highlight-color: #fc0;
+$button-background-color: $highlight-color;
+$button-text-color: #000;
 
 $menu-hover-background-color: rgba(102, 102, 102, 0.8);
 $menu-hover-text-color: #fff;
 
 $top-bar-background-color: rgba(0, 0, 0, 0.8);
+
+$border-radius: 0.2rem;

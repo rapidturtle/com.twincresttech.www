@@ -1,0 +1,16 @@
+.button {
+  display: inline-block;
+  padding: 0.6em 1em;
+  background-color: $button-background-color;
+  color: $button-text-color;
+  text-decoration: none;
+
+  &.rounded {
+    border-radius: $border-radius;
+  }
+
+  &.wide {
+    display: block;
+    text-align: center;
+  }
+}
