@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AboutModule } from './about/about.module';
 import { ManufacturersModule } from './manufacturers/manufacturers.module';
 import { SupportModule } from './support/support.module';
 
@@ -17,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    AboutModule,
     ManufacturersModule,
     SupportModule,
     SharedModule
