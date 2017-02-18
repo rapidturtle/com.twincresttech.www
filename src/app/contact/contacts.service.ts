@@ -3,18 +3,18 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
 
-import { Manufacturer } from './manufacturer.model';
+import { Contact } from './contact.model';
 
 @Injectable()
-export class ManufacturersService {
-  private manufacturersEndpoint = '/data/manufacturers.json';
+export class ContactsService {
+  private contactsEndpoint = '/data/contacts.json';
 
   constructor(private http: Http) { }
 
-  getManufacturers(): Observable<Manufacturer[]> {
-    return this.http.get(this.manufacturersEndpoint)
+  getContacts(): Observable<Contact[]> {
+    return this.http.get(this.contactsEndpoint)
       .map(this.extractData)
-      // .do(data => console.log('ManufacturersService.getManufacturers: ' + JSON.stringify(data)))
+      // .do(data => console.log('ContactsService.getContacts: ' + JSON.stringify(data)))
       .catch(this.handleError)
   }
 
