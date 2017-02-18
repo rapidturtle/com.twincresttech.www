@@ -1,6 +1,4 @@
-<div class="">
-  <img src="/assets/hero_Manufacturers.jpg" class="hero" alt="City at night with traffic.">
-</div>
+<div class="hero manufacturers"></div>
 
 <h2>Manufacturers</h2>
 
@@ -11,6 +9,8 @@
     </figure>
     <div class="card-content">
       <p [innerHtml]="manufacturer.description | html"></p>
+    </div>
+    <div class="card-footer">
       <p *ngIf="manufacturer.websiteURL">
         <a href="{{ manufacturer.websiteURL }}" class="button wide rounded off-site" target="_blank">
           <i class="fa fa-globe"></i>

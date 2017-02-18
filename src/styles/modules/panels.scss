@@ -1,0 +1,54 @@
+.panel {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.panel-section {
+  flex: 0 1 calc(50% - 0.5em);
+}
+
+.panel-image {
+  background-position: center;
+  background-size: cover;
+  margin: -1em -1em 0 -1em;
+
+  min-height: 200px;
+  min-width: calc(50% + 1em);
+
+  &.about-us {
+    background-image: url("/assets/hero_AboutUs.jpg");
+  }
+
+  &.support {
+    background-image: url("/assets/hero_Support.jpg");
+    background-position: right;
+  }
+}
+
+// Medium and up
+@media screen and (min-width: 40em) {
+  .panel-image {
+    min-height: 300px;
+  }
+}
+
+// Large and up
+@media screen and (min-width: 64em) {
+  .panel {
+    flex-flow: row;
+    &.reverse {
+      flex-flow: row-reverse;
+
+      .panel-image {
+        margin: -1em -1em -1em 1em;
+        background-position: left;
+      }
+    }
+  }
+
+  .panel-image {
+    margin: -1em 1em -1em -1em;
+    background-position: right;
+  }
+}

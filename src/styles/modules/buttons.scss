@@ -4,6 +4,11 @@
   background-color: $button-background-color;
   color: $button-text-color;
   text-decoration: none;
+  transition: background-color 0.25s;
+
+  &:hover {
+    background-color: lighten($button-background-color, 10%);
+  }
 
   &.rounded {
     border-radius: $border-radius;

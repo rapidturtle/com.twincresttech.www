@@ -1,14 +1,8 @@
 .loading {
   height: 100vh;
-  background-image: url("/assets/small_header_logo.svg"), url("/assets/bg_Loading.jpg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: center 10%, center;
-  background-size: 300px auto, cover;
-}
-
-@media screen and (min-width: 1440px) {
-  .loading {
-    background-position: center 7%, center;
-    background-size: 33%, cover;
-  }
+  background-image: url("/assets/logo_Loading.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 33% auto;
+  background-color: black;
 }

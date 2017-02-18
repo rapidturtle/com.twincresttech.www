@@ -3,8 +3,8 @@
 body {
   margin: 0;
 
-  font-family: Ubuntu, sans-serif;
-  font-weight: 300;
+  font-family: $body-font-family;
+  font-weight: $global-weight-normal;
   font-size: 16px;
   line-height: 1.5;
   color: #666;
@@ -38,7 +38,7 @@ body {
   background-size: auto 100%;
 
   height: 45px;
-  width: 307px;
+  width: 100%;
 
   display: flex;
   justify-content: center;
@@ -53,14 +53,48 @@ body {
   flex-direction: column;
 }
 
+.site-content {
+  section {
+    padding: 1em;
+
+    &:nth-child(odd) {
+      background-color: $bg-color-alternate;
+    }
+  }
+}
+
 .site-footer {
   padding: 1em;
   border-top: 1px solid #ccc;
   font-size: 0.8rem;
 }
 
-@media screen and (min-width: 426px) {
+// Medium and up
+@media screen and (min-width: 40em) {
   .brand {
     background-image: url("/assets/medium_header_logo.svg");
+    width: 307px;
   }
 }
+
+
+
+// FOR COPY & PASTE IN OTHER FILES:
+
+// Small only
+@media screen and (max-width: 39.9375em) {}
+
+// Medium and up
+@media screen and (min-width: 40em) {}
+
+// Medium only
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+// Large and up
+@media screen and (min-width: 64em) {}
+
+// Large only
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+// Extra-large and up
+@media screen and (min-width: 75em) {}
