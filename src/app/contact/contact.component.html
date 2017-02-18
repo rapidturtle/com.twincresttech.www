@@ -1,0 +1,30 @@
+<h2>Contact Us</h2>
+
+<div class="contact-cards">
+  <div class="contact-card logo"></div>
+  <div *ngFor="let contact of contacts" class="contact-card">
+    <ul class="fa-ul" itemprop="location" itemscope itemtype="http://schema.org/Place">
+      <li>
+        <strong itemprop="name">{{ contact.name }}</strong>
+      </li>
+
+      <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span class="fa fa-li fa-map-marker"></span>
+        <span itemprop="streetAddress" [innerHtml]="contact.address.streetAddress | html"></span>
+        <span itemprop="addressLocality">{{ contact.address.addressLocality }}</span>
+        <span itemprop="addressRegion">{{ contact.address.addressRegion }}</span>
+        <span itemprop="postalCode">{{ contact.address.postalCode }}</span>
+      </li>
+
+      <li *ngIf="contact.telephone">
+        <span class="fa fa-li fa-phone"></span>
+        <a itemprop="telephone" href="tel:{{ contact.telephone }}">{{ contact.telephone }}</a>
+      </li>
+
+      <li *ngIf="contact.email">
+        <span class="fa fa-li fa-envelope"></span>
+        <a itemprop="email" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

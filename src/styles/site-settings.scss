@@ -1,0 +1,24 @@
+// COLORS
+$color-palette: (
+  primary: #fc0,
+  secondary: #808080,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+$background-color: #fff;
+$background-color-alternate: #eee;
+
+$button-background-color: map-get($color-palette, primary);
+$button-text-color: #000;
+
+$menu-hover-background-color: rgba(102, 102, 102, 0.8);
+$menu-hover-text-color: #fff;
+
+$top-bar-background-color: rgba(0, 0, 0, 0.8);
+
+$border-radius: 0.2rem;
+
+$global-weight-normal: 300;
+$body-font-family: Ubuntu, sans-serif;

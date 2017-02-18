@@ -1,0 +1,8 @@
+.off-site {
+  &::after {
+    content: " \f08e";
+    font-family: FontAwesome;
+    font-size: 0.67em;
+    // color: lighten(inherit, 50%);
+  }
+}
