@@ -5,9 +5,8 @@
 }
 
 .contact-card {
+  background-color: $background-color;
   border: 1px solid #ccc;
-
-  background-color: #fff;
 
   margin-bottom: 1em;
   padding: 1em;
@@ -20,8 +19,8 @@
 
     display: none;
 
-    min-width: 10%;
     min-height: 100px;
+    min-width: 10%;
   }
 
   li {
@@ -38,7 +37,7 @@
 }
 
 [itemprop="addressLocality"]::after {
-  content: ","
+  content: ",";
 }
 
 // Medium and up

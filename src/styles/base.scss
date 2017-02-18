@@ -58,15 +58,15 @@ body {
     padding: 1em;
 
     &:nth-child(odd) {
-      background-color: $bg-color-alternate;
+      background-color: $background-color-alternate;
     }
   }
 }
 
 .site-footer {
-  padding: 1em;
   border-top: 1px solid #ccc;
   font-size: 0.8rem;
+  padding: 1em;
 }
 
 // Medium and up

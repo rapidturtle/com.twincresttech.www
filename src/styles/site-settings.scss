@@ -7,7 +7,8 @@ $color-palette: (
   alert: #cc4b37,
 );
 
-$bg-color-alternate: #eee;
+$background-color: #fff;
+$background-color-alternate: #eee;
 
 $button-background-color: map-get($color-palette, primary);
 $button-text-color: #000;
