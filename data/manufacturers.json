@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "name":        "Wavetronix",
+      "description": "Wavetronix creates innovative tools that make the world’s roads safer and more efficient. Their advanced radar offers unmatched performance and is changing the ITS industry by raising the standard for excellence in vehicle detection at intersections and roadways around the globe.",
+      "logo":        "wavetronix_logo.svg",
+      "websiteURL":  "http://www.wavetronix.com",
+      "supportURL":  "http://www.wavetronix.com/support"
+    },
+    {
+      "name":        "TrafficNet",
+      "description": "TrafficNet, LLC is dedicated to making the flow of traffic safer, smarter, and simpler to manage. Their team develops products and software to assist traffic managers and the millions of drivers on the roads each day. Through creative innovation and meticulous design, TrafficNet delivers high-quality products and top-notch service. Let us help change the way you see traffic.",
+      "logo":        "trafficnet_logo.svg",
+      "websiteURL":  "http://www.trafficnetllc.com/",
+      "supportURL":  "http://www.trafficnetllc.com/contact"
+    },
+    {
+      "name":        "Intuicom",
+      "description": "Founded in 1999, Intuicom, Incorporated is a leader in providing ruggedized wireless solutions that enhance precision GPS applications, traffic control, transportation, and automation. Operating on all seven continents and in every possible climate, Intuicom solutions can satisfy the most demanding requirements.",
+      "logo":        "intuicom_logo.svg",
+      "websiteURL":  "http://www.intuicom.com/",
+      "supportURL":  "http://www.intuicom.com/contact-us"
+    },
+    {
+      "name":        "Computerized Traffic Control",
+      "description": "Computerized Traffic Control, Inc., (CTC) is a manufacturer of enclosure assemblies and related items for Freeway Traffic Management and ITS Systems, primarily in the State of Texas. Their product lines include cabinet assemblies, communication buildings, detector card racks, power supplies, surge protection equipment, Lane Control Signal control equipment and current sensing devices.",
+      "logo":        "computerized-traffic-control_logo.svg",
+      "websiteURL":  "http://www.computerizedtraffic.com/",
+      "supportURL":  "http://computerizedtraffic.com/contact/"
+    }
+  ]
+}
