@@ -1,0 +1,83 @@
+.contact-cards {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.contact-card {
+  background-color: $background-color;
+  border: 1px solid #ccc;
+
+  margin-bottom: 1em;
+  padding: 1em;
+
+  &.logo {
+    background-image: url("/assets/logo_ContactUs.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    display: none;
+
+    min-height: 100px;
+    min-width: 10%;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+[itemprop="streetAddress"] {
+  display: block;
+}
+
+[itemprop="addressLocality"]::after {
+  content: ",";
+}
+
+// Medium and up
+@media screen and (min-width: 40em) {
+  .contact-cards {
+    flex-flow: row;
+  }
+
+  .contact-card {
+    flex: 0 1 calc(50% - 2.5em);
+  }
+}
+
+// Large and up
+@media screen and (min-width: 64em) {
+  .contact-card {
+    flex: 0 1 calc(33% - 2.5em);
+
+    &.logo {
+      display: block;
+    }
+  }
+}
+
+// Extra-large and up
+@media screen and (min-width: 75em) {
+  .contact-card {
+    flex: 0 1 calc(25% - 2.75em);
+
+    &.logo {
+      flex: 0 1 calc(50% - 2.75em);
+      // order: 1;
+    }
+
+    &:first-child {
+      // order: 2;
+    }
+
+    &:last-child {
+      // order: 3;
+    }
+  }
+}
