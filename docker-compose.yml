@@ -1,0 +1,22 @@
+---
+version: "3.7"
+
+services:
+  angular:
+    build: .
+    container_name: twincrest-app
+    environment:
+      - ENABLE_POLLING=${ENABLE_POLLING}
+    image: twincrest-app
+    networks:
+      - twincrest-net
+    ports:
+      - 4200:4200
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./src:/home/app/twincrest/src
+
+networks:
+  twincrest-net:
+    driver: bridge
