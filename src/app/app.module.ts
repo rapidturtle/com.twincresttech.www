@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AboutModule } from './about/about.module';
 import { SharedModule } from './shared/shared.module';
+import { AboutModule } from './about/about.module';
+import { ContactModule } from './contact/contact.module';
+import { ManufacturersModule } from './manufacturers/manufacturers.module';
+import { SupportModule } from './support/support.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +15,12 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    SharedModule,
     AboutModule,
-    SharedModule
+    ContactModule,
+    ManufacturersModule,
+    SupportModule
   ],
   providers: [],
   bootstrap: [AppComponent]
