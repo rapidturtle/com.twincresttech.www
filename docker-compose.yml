@@ -6,6 +6,8 @@ services:
     build: .
     command: ng serve --host 0.0.0.0 --disableHostCheck
     container_name: twincrest-app
+    depends_on:
+      - proxy
     environment:
       - ENABLE_POLLING=${ENABLE_POLLING}
     labels:
