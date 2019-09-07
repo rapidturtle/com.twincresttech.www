@@ -1,0 +1,28 @@
+<div class="hero manufacturers"></div>
+
+<h2>Manufacturers</h2>
+
+<div class="cards">
+  <div *ngFor="let manufacturer of manufacturers | async" class="card">
+    <figure>
+      <img src="/data/images/manufacturers/{{ manufacturer.logo }}" alt="{{ manufacturer.name }} logo">
+    </figure>
+    <div class="card-content">
+      <p [innerHtml]="manufacturer.description | html"></p>
+    </div>
+    <div class="card-footer">
+      <p *ngIf="manufacturer.websiteURL">
+        <a href="{{ manufacturer.websiteURL }}" class="button wide rounded off-site" target="_blank">
+          <i class="fa fa-globe"></i>
+          Visit website
+        </a>
+      </p>
+      <p *ngIf="manufacturer.supportURL">
+        <a href="{{ manufacturer.supportURL }}" class="button wide rounded off-site" target="_blank">
+          <i class="fa fa-life-saver"></i>
+          Get support
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

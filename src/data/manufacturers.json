@@ -1,0 +1,16 @@
+[
+  {
+    "name":        "Wavetronix",
+    "description": "Wavetronix creates innovative tools that make the world’s roads safer and more efficient. Their advanced radar offers unmatched performance and is changing the ITS industry by raising the standard for excellence in vehicle detection at intersections and roadways around the globe.",
+    "logo":        "wavetronix_logo.svg",
+    "websiteURL":  "http://www.wavetronix.com",
+    "supportURL":  "http://www.wavetronix.com/support"
+  },
+  {
+    "name":        "Siqura",
+    "description": "Siqura's mission is to bring uncomplicated clarity to the men and women watching over our safety. They do this by helping them make error-free decisions during critical situations. They believe that uncomplicated clarity in video surveillance can truly contribute to a superior response and thus a safer society for all.",
+    "logo":        "siqura_logo.svg",
+    "websiteURL":  "http://www.siqura.com/",
+    "supportURL":  "http://www.siqura.com/support"
+  }
+]
