@@ -1,5 +1,6 @@
 /docker
 .DS_Store
+.devcontainer.json
 .dockerignore
 .git*
 Dockerfile

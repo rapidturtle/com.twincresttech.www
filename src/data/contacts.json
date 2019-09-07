@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Headquarters",
+    "address": {
+      "streetAddress": "7625 Bellaire Drive South\\nSuite 130",
+      "addressLocality": "Fort Worth",
+      "addressRegion": "TX",
+      "postalCode": "76132"
+    },
+    "telephone": "817-539-2200",
+    "email": "sales@twincresttech.com"
+  },
+  {
+    "name": "South Texas Office",
+    "address": {
+      "streetAddress": "1736 Summergate",
+      "addressLocality": "Conroe",
+      "addressRegion": "TX",
+      "postalCode": "77304"
+    },
+    "telephone": "281-739-5752"
+  }
+]
