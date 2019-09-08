@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { Manufacturer } from './manufacturer.model';
 import { ManufacturersService } from './manufacturers.service';
 
@@ -9,8 +11,7 @@ import { ManufacturersService } from './manufacturers.service';
   styleUrls: ['./manufacturers.component.scss']
 })
 export class ManufacturersComponent implements OnInit {
-  manufacturers: Manufacturer[];
-  errorMessage: string;
+  manufacturers: Observable<Manufacturer[]>;
 
   constructor(private manufacturersService: ManufacturersService) { }
 
@@ -19,10 +20,6 @@ export class ManufacturersComponent implements OnInit {
   }
 
   getManufacturers() {
-    this.manufacturersService.getManufacturers()
-      .subscribe(
-        manufacturers => this.manufacturers = manufacturers,
-        error => this.errorMessage = <any>error
-      );
+    this.manufacturers = this.manufacturersService.getManufacturers();
   }
 }

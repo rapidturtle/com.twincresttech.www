@@ -2,7 +2,7 @@
 
 <div class="contact-cards">
   <div class="contact-card logo"></div>
-  <div *ngFor="let contact of contacts" class="contact-card">
+  <div *ngFor="let contact of contacts | async" class="contact-card">
     <ul class="fa-ul" itemprop="location" itemscope itemtype="http://schema.org/Place">
       <li>
         <strong itemprop="name">{{ contact.name }}</strong>

@@ -1,15 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
 import { ManufacturersModule } from './manufacturers/manufacturers.module';
-import { SharedModule } from './shared/shared.module';
 import { SupportModule } from './support/support.module';
-
 
 @NgModule({
   declarations: [
@@ -17,12 +15,11 @@ import { SupportModule } from './support/support.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    HttpClientModule,
+    SharedModule,
     AboutModule,
     ContactModule,
     ManufacturersModule,
-    SharedModule,
     SupportModule
   ],
   providers: [],

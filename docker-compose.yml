@@ -1,0 +1,29 @@
+---
+version: "3.7"
+
+services:
+  app:
+    build: .
+    command: ng serve --host 0.0.0.0 --disableHostCheck
+    container_name: twincrest-app
+    depends_on:
+      - proxy
+    environment:
+      - ENABLE_POLLING=${ENABLE_POLLING}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`twincrest.localhost`)"
+      - "traefik.http.routers.app.entryPoints=http"
+    volumes:
+      - ./src:/home/app/twincrest/src
+
+  proxy:
+    image: traefik:2.0-alpine
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./docker/traefik.yml:/etc/traefik/traefik.yml

@@ -4,10 +4,10 @@ import { CommonModule } from '@angular/common';
 import { SupportComponent } from './support.component';
 
 @NgModule({
+  declarations: [SupportComponent],
   imports: [
     CommonModule
   ],
-  declarations: [SupportComponent],
   exports: [SupportComponent]
 })
 export class SupportModule { }

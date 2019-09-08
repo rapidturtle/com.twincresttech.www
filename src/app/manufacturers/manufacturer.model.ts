@@ -1,9 +1,7 @@
-export class Manufacturer {
-  constructor(
-    public name:        string,
-    public description: string,
-    public logo:        string,
-    public websiteURL:  string,
-    public supportURL:  string
-  ) {}
+export interface Manufacturer {
+  name: string;
+  description: string;
+  logo: string;
+  websiteURL: string;
+  supportURL?: string;
 }

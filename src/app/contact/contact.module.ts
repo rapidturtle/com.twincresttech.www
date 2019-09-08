@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { ContactComponent} from './contact.component';
-import { ContactsService} from './contacts.service';
+import { ContactComponent } from './contact.component';
+import { ContactsService } from './contacts.service';
 
 @NgModule({
-  imports:      [CommonModule, SharedModule],
   declarations: [ContactComponent],
-  providers:    [ContactsService],
-  exports:      [ContactComponent]
+  imports: [
+    CommonModule,
+    SharedModule
+  ],
+  exports: [ContactComponent],
+  providers: [ContactsService]
 })
 export class ContactModule { }

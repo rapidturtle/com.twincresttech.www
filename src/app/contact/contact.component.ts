@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { Contact } from './contact.model';
 import { ContactsService } from './contacts.service';
 
@@ -9,8 +11,7 @@ import { ContactsService } from './contacts.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  contacts: Contact[];
-  errorMessage: string;
+  contacts: Observable<Contact[]>;
 
   constructor(private contactsService: ContactsService) { }
 
@@ -19,11 +20,6 @@ export class ContactComponent implements OnInit {
   }
 
   getContacts() {
-    this.contactsService.getContacts()
-      .subscribe(
-        contacts => this.contacts = contacts,
-        error => this.errorMessage = <any>error
-      );
+    this.contacts = this.contactsService.getContacts();
   }
-
 }

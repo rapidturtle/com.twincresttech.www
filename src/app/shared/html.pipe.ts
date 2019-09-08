@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HtmlPipe implements PipeTransform {
 
-  transform(value: any): any {
+  transform(value: any, ...args: any[]): any {
     let html = value;
 
     html = value.replace(/(?:\\r\\n|\\r|\\n){2}/g, '</p><p>');

@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { HtmlPipe } from './html.pipe';
 
+
 @NgModule({
+  declarations: [HtmlPipe],
   imports: [
     CommonModule
   ],
-  declarations: [HtmlPipe],
-  exports: [HtmlPipe]
+  exports: [
+    HtmlPipe
+  ]
 })
 export class SharedModule { }
