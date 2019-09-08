@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
+import { InstallersModule } from './installers/installers.module';
 import { ManufacturersModule } from './manufacturers/manufacturers.module';
 import { SupportModule } from './support/support.module';
 
@@ -19,6 +20,7 @@ import { SupportModule } from './support/support.module';
     SharedModule,
     AboutModule,
     ContactModule,
+    InstallersModule,
     ManufacturersModule,
     SupportModule
   ],
