@@ -9,20 +9,22 @@
       </li>
 
       <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <span class="fa fa-li fa-map-marker"></span>
-        <span itemprop="streetAddress" [innerHtml]="contact.address.streetAddress | html"></span>
-        <span itemprop="addressLocality">{{ contact.address.addressLocality }}</span>
-        <span itemprop="addressRegion">{{ contact.address.addressRegion }}</span>
-        <span itemprop="postalCode">{{ contact.address.postalCode }}</span>
+        <span class="fa-li"><i class="fal fa-map-marker-alt"></i></span>
+        <address>
+          <span itemprop="streetAddress" [innerHtml]="contact.address.streetAddress | html"></span>
+          <span itemprop="addressLocality">{{ contact.address.addressLocality }}</span>&nbsp;
+          <span itemprop="addressRegion">{{ contact.address.addressRegion }}</span>&nbsp;
+          <span itemprop="postalCode">{{ contact.address.postalCode }}</span>
+        </address>
       </li>
 
       <li *ngIf="contact.telephone">
-        <span class="fa fa-li fa-phone"></span>
+        <span class="fa-li"><i class="fal fa-phone-alt"></i></span>
         <a itemprop="telephone" href="tel:{{ contact.telephone }}">{{ contact.telephone }}</a>
       </li>
 
       <li *ngIf="contact.email">
-        <span class="fa fa-li fa-envelope"></span>
+        <span class="fa-li"><i class="fal fa-envelope"></i></span>
         <a itemprop="email" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
       </li>
     </ul>

@@ -1,8 +1,10 @@
 .off-site {
   &::after {
     content: " \f08e";
-    font-family: FontAwesome;
-    font-size: 0.67em;
-    // color: lighten(inherit, 50%);
+    font-family: "Font Awesome 5 Pro";
+    font-size: 0.65em;
+    font-weight: 400;
+    position: relative;
+    top: -0.08em;
   }
 }
