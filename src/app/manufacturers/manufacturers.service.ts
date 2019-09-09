@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { Manufacturer } from './manufacturer.model';
 
@@ -15,8 +15,9 @@ export class ManufacturersService {
   constructor(private http: HttpClient) { }
 
   getManufacturers(): Observable<Manufacturer[]> {
-    return this.http.get<Manufacturer[]>(this.manufacturersEndpoint)
+    return this.http.get<{ data: Manufacturer[] }>(this.manufacturersEndpoint)
       .pipe(
+        map((response: { data: Manufacturer[] } ) => response.data),
         catchError(this.handleError<Manufacturer[]>('getManufacturers', []))
       )
   }

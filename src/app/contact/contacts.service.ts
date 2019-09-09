@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { Contact } from './contact.model';
 
@@ -13,8 +13,9 @@ export class ContactsService {
   constructor(private http: HttpClient) { }
 
   getContacts(): Observable<Contact[]> {
-    return this.http.get<Contact[]>(this.contactsEndpoint)
+    return this.http.get<{ data: Contact[] }>(this.contactsEndpoint)
       .pipe(
+        map((response: { data: Contact[] }) => response.data),
         catchError(this.handleError<Contact[]>('getContacts', []))
       );
   }
