@@ -10,13 +10,16 @@ $color-palette: (
 $background-color: #fff;
 $background-color-alternate: #eee;
 
+$body-text-color: #666;
+
 $button-background-color: map-get($color-palette, primary);
 $button-text-color: #000;
 
-$menu-hover-background-color: rgba(102, 102, 102, 0.8);
-$menu-hover-text-color: #fff;
+$site-nav-link-hover-background-color: none;
+$site-nav-link-hover-text-color: #fff;
 
-$top-bar-background-color: rgba(0, 0, 0, 0.8);
+$site-header-background-color: rgba(0, 0, 0, 0.8);
+$site-header-text-color: #999;
 
 $border-radius: 0.2rem;
 
