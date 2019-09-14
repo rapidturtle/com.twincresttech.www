@@ -17,14 +17,14 @@ jobs:
           node-version: '10.x'
 
       - name: Install
-        run: yarn install && which ng
+        run: yarn install
         
       - name: Build
-        run: ng build --prod
+        run: yarn run build:prod
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.2.0
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.PERSONAL_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./dist
+          PUBLISH_DIR: ./dist/twincrest
