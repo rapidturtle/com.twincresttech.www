@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ManufacturersComponent } from './manufacturers.component';
-import { SharedModule } from '../shared/shared.module';
-import { ManufacturersService } from './manufacturers.service';
+import { SharedModule } from '@app/shared/shared.module';
+import { ManufacturersComponent } from '@app/manufacturers/manufacturers.component';
+import { ManufacturersService } from '@app/manufacturers/manufacturers.service';
 
 @NgModule({
   declarations: [ManufacturersComponent],

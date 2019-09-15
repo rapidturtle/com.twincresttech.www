@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 
-import { ContactComponent } from './contact.component';
-import { ContactsService } from './contacts.service';
+import { ContactComponent } from '@app/contact/contact.component';
+import { ContactsService } from '@app/contact/contacts.service';
 
 @NgModule({
   declarations: [ContactComponent],

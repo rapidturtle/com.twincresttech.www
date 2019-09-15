@@ -1,4 +1,4 @@
-import { HtmlPipe } from './html.pipe';
+import { HtmlPipe } from '@app/shared/html.pipe';
 
 describe('HtmlPipe', () => {
   it('create an instance', () => {

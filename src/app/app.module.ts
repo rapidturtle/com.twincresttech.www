@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { AboutModule } from './about/about.module';
-import { ContactModule } from './contact/contact.module';
-import { InstallersModule } from './installers/installers.module';
-import { ManufacturersModule } from './manufacturers/manufacturers.module';
-import { SupportModule } from './support/support.module';
+import { AppComponent } from '@app/app.component';
+import { SharedModule } from '@app/shared/shared.module';
+import { AboutModule } from '@app/about/about.module';
+import { ContactModule } from '@app/contact/contact.module';
+import { InstallersModule } from '@app/installers/installers.module';
+import { ManufacturersModule } from '@app/manufacturers/manufacturers.module';
+import { SupportModule } from '@app/support/support.module';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ManufacturersService } from './manufacturers.service';
+import { ManufacturersService } from '@app/manufacturers/manufacturers.service';
 
 describe('ManufacturersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

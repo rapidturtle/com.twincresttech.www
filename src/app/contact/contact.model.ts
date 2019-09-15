@@ -1,4 +1,4 @@
-import { Address } from './address.model';
+import { Address } from '@app/contact/address.model';
 
 export interface Contact {
   name: string;

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { Contact } from './contact.model';
+import { Contact } from '@app/contact/contact.model';
 
 @Injectable()
 export class ContactsService {

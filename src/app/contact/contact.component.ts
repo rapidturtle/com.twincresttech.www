@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { Contact } from './contact.model';
-import { ContactsService } from './contacts.service';
+import { Contact } from '@app/contact/contact.model';
+import { ContactsService } from '@app/contact/contacts.service';
 
 @Component({
   selector: 'app-contact',

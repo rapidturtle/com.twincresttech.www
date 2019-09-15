@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { Manufacturer } from './manufacturer.model';
+import { Manufacturer } from '@app/manufacturers/manufacturer.model';
 
 @Injectable({
   providedIn: 'root'
