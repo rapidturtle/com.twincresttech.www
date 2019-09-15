@@ -5,7 +5,6 @@ services:
   app:
     build: .
     command: ng serve --host 0.0.0.0 --disableHostCheck
-    container_name: twincrest-app
     depends_on:
       - proxy
     environment:
@@ -15,7 +14,9 @@ services:
       - "traefik.http.routers.app.rule=Host(`twincrest.localhost`)"
       - "traefik.http.routers.app.entryPoints=http"
     volumes:
-      - ./src:/home/app/twincrest/src
+      - ./src:/home/app/twincrest/src:delegated
+      - ./package.json:/home/app/twincrest/package.json
+      - ./yarn.lock:/home/app/twincrest/yarn.lock
 
   proxy:
     image: traefik:2.0-alpine
