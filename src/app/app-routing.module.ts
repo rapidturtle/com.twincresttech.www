@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '@app/auth/auth.guard';
-import { AppComponent } from '@app/app.component';
 import { CallbackComponent } from '@app/auth/callback/callback.component';
 import { ProfileComponent } from '@app/auth/profile/profile.component';
+import { HomeComponent } from '@app/home/home.component';
 
 const routes: Routes = [
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AppComponent,
+    component: HomeComponent,
     pathMatch: 'full'
   }
 ];

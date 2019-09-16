@@ -83,9 +83,9 @@ export class AuthService {
       })
     );
 
-    // authComplete$.subscribe(([user, loggedIn]) => {
-    //   this.router.navigate([targetRoute]);
-    // });
+    authComplete$.subscribe(([user, loggedIn]) => {
+      this.router.navigate([targetRoute]);
+    });
   }
 
   logout() {
