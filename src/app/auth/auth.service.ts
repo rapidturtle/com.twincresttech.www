@@ -12,8 +12,8 @@ import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 export class AuthService {
   auth0Client$ = (from(
     createAuth0Client({
-      domain: 'twincrest.auth0.com',
-      client_id: 'DU3ErIIs5nP63rZRAfmj0b6hJL10s8W4',
+      domain: 'twincrest-dev.auth0.com',
+      client_id: '7CnQPcvrn6BJMJhZfTaD6My1ekJlhkFG',
       redirect_uri: `${window.location.origin}/callback`
     })
   ) as Observable<Auth0Client>).pipe(
