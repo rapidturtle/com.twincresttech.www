@@ -4,5 +4,6 @@
     All rights reserved.
     <a (click)="auth.login()" *ngIf="!auth.loggedIn"><i class="fal fa-sign-in"></i></a>
     <a (click)="auth.logout()" *ngIf="auth.loggedIn"><i class="fal fa-sign-out"></i></a>
+    <a routerLink="profile" *ngIf="auth.loggedIn"><i class="fal fa-user-circle"></i></a>
   </p>
 </footer>
