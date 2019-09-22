@@ -6,14 +6,16 @@ import { shareReplay, catchError, concatMap, tap } from 'rxjs/operators';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 
+import { environment } from '@env/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   auth0Client$ = (from(
     createAuth0Client({
-      domain: 'twincrest-dev.auth0.com',
-      client_id: '7CnQPcvrn6BJMJhZfTaD6My1ekJlhkFG',
+      domain: environment.auth0Domain,
+      client_id: environment.auth0ClientId,
       redirect_uri: `${window.location.origin}/callback`
     })
   ) as Observable<Auth0Client>).pipe(
@@ -91,7 +93,7 @@ export class AuthService {
   logout() {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       client.logout({
-        client_id: '7CnQPcvrn6BJMJhZfTaD6My1ekJlhkFG',
+        client_id: environment.auth0ClientId,
         returnTo: window.location.origin
       });
     });
