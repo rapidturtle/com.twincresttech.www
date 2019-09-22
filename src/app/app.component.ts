@@ -8,7 +8,6 @@ import { AuthService } from '@app/auth/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  copyrightDate = new Date();
 
   constructor(private auth: AuthService) {}
 

@@ -8,6 +8,7 @@ import { AuthService } from '@app/auth/auth.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  copyrightDate = new Date();
 
   constructor(public auth: AuthService) { }
 

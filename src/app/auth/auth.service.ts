@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { from, Observable, throwError, BehaviorSubject, of } from 'rxjs';
-import { shareReplay, catchError, concatMap, tap, combineLatest } from 'rxjs/operators';
+import { from, Observable, throwError, BehaviorSubject, of, combineLatest } from 'rxjs';
+import { shareReplay, catchError, concatMap, tap } from 'rxjs/operators';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 
@@ -32,7 +32,7 @@ export class AuthService {
 
   private userProfileSubject$ = new BehaviorSubject<any>(null);
   userProfile$ = this.userProfileSubject$.asObservable();
-  loggedIn: boolean;
+  loggedIn: boolean = null;
 
   constructor(private router: Router) { }
 
