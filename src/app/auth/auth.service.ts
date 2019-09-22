@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { from, Observable, throwError, BehaviorSubject, of, combineLatest } from 'rxjs';
+import { from, Observable, throwError, BehaviorSubject, of, combineLatest, config } from 'rxjs';
 import { shareReplay, catchError, concatMap, tap } from 'rxjs/operators';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
@@ -91,8 +91,8 @@ export class AuthService {
   logout() {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       client.logout({
-        client_id: 'DU3ErIIs5nP63rZRAfmj0b6hJL10s8W4',
-        returnTo: `${window.location.origin}`
+        client_id: '7CnQPcvrn6BJMJhZfTaD6My1ekJlhkFG',
+        returnTo: window.location.origin
       });
     });
   }

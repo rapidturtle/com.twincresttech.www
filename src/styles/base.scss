@@ -46,6 +46,26 @@ section {
   border-top: 1px solid #ccc;
   font-size: 0.8rem;
   padding: 1em;
+
+  ul {
+    display: flex;
+    align-items: baseline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    border-right: 1px solid #ccc;
+    margin-right: 1rem;
+    padding-right: 1rem;
+
+    &:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 // Medium and up
