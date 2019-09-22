@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { InstallersComponent } from './installers.component';
+import { InstallersComponent } from '@app/installers/installers.component';
 
 @NgModule({
   declarations: [InstallersComponent],

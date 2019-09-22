@@ -1,36 +1,11 @@
 <header id="site-header">
   <h1>Twincrest Technologies</h1>
 
-  <nav id="site-nav">
-    <ul>
-      <li><a href="#manufacturers">Manufacturers</a></li>
-      <li><a href="#support">Support</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-      <li><a href="#about">About Us</a></li>
-    </ul>
-  </nav>
+  <app-nav></app-nav>
 </header>
 
 <main id="site-content">
-  <section id="hero"></section>
-
-  <section id="manufacturers">
-    <app-manufacturers></app-manufacturers>
-  </section>
-
-  <section id="support">
-    <app-support></app-support>
-  </section>
-
-  <section id="contact">
-    <app-contact></app-contact>
-  </section>
-
-  <section id="about">
-    <app-about></app-about>
-  </section>
+  <router-outlet></router-outlet>
 </main>
 
-<footer id="site-footer">
-  <p>&copy; 2008&ndash;{{ copyrightDate | date: 'y' }} Twincrest Technologies, Inc. All rights reserved.</p>
-</footer>
+<app-footer></app-footer>

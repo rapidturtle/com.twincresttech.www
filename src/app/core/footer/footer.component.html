@@ -1,0 +1,16 @@
+<footer id="site-footer">
+  <ul>
+    <li>
+        &copy; 2008&ndash;{{ copyrightDate | date: 'y' }} Twincrest Technologies, Inc.
+        All rights reserved.
+    </li>
+    <li *ngIf="auth.userProfile$ | async as profile">
+      <i class="fal fa-id-badge"></i>
+      {{ profile.name }}
+    </li>
+    <li>
+      <a (click)="auth.login()" *ngIf="!auth.loggedIn" style="cursor: pointer"><i class="fal fa-sign-in"></i></a>
+      <a (click)="auth.logout()" *ngIf="auth.loggedIn" style="cursor: pointer"><i class="fal fa-sign-out"></i></a>
+    </li>
+  </ul>
+</footer>

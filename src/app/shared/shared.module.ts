@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HtmlPipe } from './html.pipe';
+import { HtmlPipe } from '@app/shared/html.pipe';
 
 
 @NgModule({

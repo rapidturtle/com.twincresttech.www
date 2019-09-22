@@ -29,14 +29,18 @@
 
 .card-content {
   flex-grow: 1;
-  padding: 1em;
+  padding: 2em;
 }
 
 .card-footer {
-  padding: 1em;
+  padding: 0 2em 2em 2em;
 
   p:last-child {
     margin-bottom: 0;
+  }
+
+  p:first-child {
+    margin-top: 0;
   }
 }
 

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ContactsService } from './contacts.service';
+import { ContactsService } from '@app/contact/contacts.service';
 
 describe('ContactsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
