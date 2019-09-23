@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+
+import { BugsnagErrorHandler } from '@bugsnag/plugin-angular';
+import bugsnagClient from '@app/bugsnag';
 
 import { AppRoutingModule } from '@app/app-routing.module';
 import { SharedModule } from '@app/shared/shared.module';
@@ -15,6 +18,10 @@ import { AppComponent } from '@app/app.component';
 import { NavComponent } from '@app/core/nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './core/footer/footer.component';
+
+export function errorHandlerFactory() {
+  return new BugsnagErrorHandler(bugsnagClient);
+}
 
 @NgModule({
   declarations: [
@@ -35,7 +42,9 @@ import { FooterComponent } from './core/footer/footer.component';
     ManufacturersModule,
     SupportModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, useFactory: errorHandlerFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
