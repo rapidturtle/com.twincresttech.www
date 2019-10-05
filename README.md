@@ -1,6 +1,6 @@
 # Twincrest
 
-![](https://github.com/rapidturtle/twincrest/workflows/.github/workflows/main.yml/badge.svg)
+![](https://github.com/rapidturtle/twincrest/workflows/.github/workflows/gh-pages.yml/badge.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
 
