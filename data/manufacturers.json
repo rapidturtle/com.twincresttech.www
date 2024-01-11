@@ -11,6 +11,12 @@
       "description": "Founded in 1996, ISS is one of the pioneers and leading developers of artificial intelligence (AI)-driven video analytics. With a portfolio of more than 25 different patents and trademarks, ISS has almost 200 developers and engineers develop­ing custom, high-trust analytics to meet the unique requirements of clients across multiple vertical markets.",
       "logo":        "iss_logo.svg",
       "websiteURL":  "http://www.issivs.com/"
+    },
+    {
+      "name":        "360ns",
+      "description": "360ns is proud to be the leader in infrastructure security, simplifying deployment and managing secured access inside traffic cabinet networks.",
+      "logo":        "logo_360ns.png",
+      "websiteURL":  "/data/files/manufacturers/360ns/SL-8000.pdf"
     }
   ]
 }
